@@ -99,3 +99,1355 @@ FOREIGN KEY ("category_id")
   [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5364670614761820600)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2022-09-09 16:52:56 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.7ms | Allocations: 550)
+Completed 200 OK in 5ms (Views: 1.6ms | ActiveRecord: 0.0ms | Allocations: 3701)
+
+
+Started GET "/admin/" for 127.0.0.1 at 2022-09-09 16:52:59 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/admin"):
+  
+Started GET "/admin/" for 127.0.0.1 at 2022-09-09 16:55:45 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20220909145502_devise_create_users.rb
+
+
+):
+  
+activerecord (7.0.3.1) lib/active_record/migration.rb:627:in `check_pending!'
+activerecord (7.0.3.1) lib/active_record/migration.rb:592:in `block (2 levels) in call'
+activesupport (7.0.3.1) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (7.0.3.1) lib/active_record/migration.rb:597:in `block in call'
+activerecord (7.0.3.1) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.3.1) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3.1) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3.1) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3.1) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3.1) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3.1) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3.1) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3.1) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/rails/actions" for 127.0.0.1 at 2022-09-09 16:55:47 +0200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5364670614761820600)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20220909145502)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp(6), "remember_created_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5364670614761820600)[0m
+  
+StandardError (An error has occurred, this and all later migrations canceled:
+
+PG::DuplicateTable: ERROR:  relation "users" already exists
+):
+  
+activerecord (7.0.3.1) lib/active_record/connection_adapters/postgresql/database_statements.rb:48:in `exec'
+activerecord (7.0.3.1) lib/active_record/connection_adapters/postgresql/database_statements.rb:48:in `block (2 levels) in execute'
+activesupport (7.0.3.1) lib/active_support/concurrency/share_lock.rb:187:in `yield_shares'
+activesupport (7.0.3.1) lib/active_support/dependencies/interlock.rb:41:in `permit_concurrent_loads'
+activerecord (7.0.3.1) lib/active_record/connection_adapters/postgresql/database_statements.rb:47:in `block in execute'
+activesupport (7.0.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `handle_interrupt'
+activesupport (7.0.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `block in synchronize'
+activesupport (7.0.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `handle_interrupt'
+activesupport (7.0.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `synchronize'
+activerecord (7.0.3.1) lib/active_record/connection_adapters/abstract_adapter.rb:765:in `block in log'
+activesupport (7.0.3.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activerecord (7.0.3.1) lib/active_record/connection_adapters/abstract_adapter.rb:756:in `log'
+activerecord (7.0.3.1) lib/active_record/connection_adapters/postgresql/database_statements.rb:46:in `execute'
+activerecord (7.0.3.1) lib/active_record/connection_adapters/abstract/schema_statements.rb:325:in `create_table'
+activerecord (7.0.3.1) lib/active_record/migration.rb:932:in `block in method_missing'
+activerecord (7.0.3.1) lib/active_record/migration.rb:900:in `block in say_with_time'
+/Users/praca/.rbenv/versions/3.1.2/lib/ruby/3.1.0/benchmark.rb:296:in `measure'
+activerecord (7.0.3.1) lib/active_record/migration.rb:900:in `say_with_time'
+activerecord (7.0.3.1) lib/active_record/migration.rb:921:in `method_missing'
+db/migrate/20220909145502_devise_create_users.rb:5:in `change'
+activerecord (7.0.3.1) lib/active_record/migration.rb:870:in `exec_migration'
+activerecord (7.0.3.1) lib/active_record/migration.rb:854:in `block (2 levels) in migrate'
+/Users/praca/.rbenv/versions/3.1.2/lib/ruby/3.1.0/benchmark.rb:296:in `measure'
+activerecord (7.0.3.1) lib/active_record/migration.rb:853:in `block in migrate'
+activerecord (7.0.3.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:215:in `with_connection'
+activerecord (7.0.3.1) lib/active_record/migration.rb:852:in `migrate'
+activerecord (7.0.3.1) lib/active_record/migration.rb:1046:in `migrate'
+activerecord (7.0.3.1) lib/active_record/migration.rb:1360:in `block in execute_migration_in_transaction'
+activerecord (7.0.3.1) lib/active_record/connection_adapters/abstract/transaction.rb:319:in `block in within_new_transaction'
+activesupport (7.0.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `handle_interrupt'
+activesupport (7.0.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `block in synchronize'
+activesupport (7.0.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `handle_interrupt'
+activesupport (7.0.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `synchronize'
+activerecord (7.0.3.1) lib/active_record/connection_adapters/abstract/transaction.rb:317:in `within_new_transaction'
+activerecord (7.0.3.1) lib/active_record/connection_adapters/abstract/database_statements.rb:316:in `transaction'
+activerecord (7.0.3.1) lib/active_record/transactions.rb:209:in `transaction'
+activerecord (7.0.3.1) lib/active_record/migration.rb:1411:in `ddl_transaction'
+activerecord (7.0.3.1) lib/active_record/migration.rb:1359:in `execute_migration_in_transaction'
+activerecord (7.0.3.1) lib/active_record/migration.rb:1333:in `each'
+activerecord (7.0.3.1) lib/active_record/migration.rb:1333:in `migrate_without_lock'
+activerecord (7.0.3.1) lib/active_record/migration.rb:1282:in `block in migrate'
+activerecord (7.0.3.1) lib/active_record/migration.rb:1432:in `block in with_advisory_lock'
+activerecord (7.0.3.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:215:in `with_connection'
+activerecord (7.0.3.1) lib/active_record/migration.rb:1447:in `with_advisory_lock_connection'
+activerecord (7.0.3.1) lib/active_record/migration.rb:1428:in `with_advisory_lock'
+activerecord (7.0.3.1) lib/active_record/migration.rb:1282:in `migrate'
+activerecord (7.0.3.1) lib/active_record/migration.rb:1117:in `up'
+activerecord (7.0.3.1) lib/active_record/migration.rb:1092:in `migrate'
+activerecord (7.0.3.1) lib/active_record/tasks/database_tasks.rb:262:in `migrate'
+activerecord (7.0.3.1) lib/active_record/migration.rb:137:in `block in <class:PendingMigrationError>'
+activesupport (7.0.3.1) lib/active_support/actionable_error.rb:28:in `dispatch'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/actionable_exceptions.rb:19:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3.1) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3.1) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3.1) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3.1) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3.1) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3.1) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3.1) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/rails/actions" for 127.0.0.1 at 2022-09-09 16:55:52 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20220909145502_devise_create_users.rb
+
+
+):
+  
+activerecord (7.0.3.1) lib/active_record/migration.rb:627:in `check_pending!'
+activerecord (7.0.3.1) lib/active_record/migration.rb:592:in `block (2 levels) in call'
+activesupport (7.0.3.1) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (7.0.3.1) lib/active_record/migration.rb:597:in `block in call'
+activerecord (7.0.3.1) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.3.1) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3.1) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3.1) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3.1) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3.1) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3.1) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3.1) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3.1) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/rails/actions" for 127.0.0.1 at 2022-09-09 16:55:54 +0200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5364670614761820600)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20220909145502)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp(6), "remember_created_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5364670614761820600)[0m
+  
+StandardError (An error has occurred, this and all later migrations canceled:
+
+PG::DuplicateTable: ERROR:  relation "users" already exists
+):
+  
+activerecord (7.0.3.1) lib/active_record/connection_adapters/postgresql/database_statements.rb:48:in `exec'
+activerecord (7.0.3.1) lib/active_record/connection_adapters/postgresql/database_statements.rb:48:in `block (2 levels) in execute'
+activesupport (7.0.3.1) lib/active_support/concurrency/share_lock.rb:187:in `yield_shares'
+activesupport (7.0.3.1) lib/active_support/dependencies/interlock.rb:41:in `permit_concurrent_loads'
+activerecord (7.0.3.1) lib/active_record/connection_adapters/postgresql/database_statements.rb:47:in `block in execute'
+activesupport (7.0.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `handle_interrupt'
+activesupport (7.0.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `block in synchronize'
+activesupport (7.0.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `handle_interrupt'
+activesupport (7.0.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `synchronize'
+activerecord (7.0.3.1) lib/active_record/connection_adapters/abstract_adapter.rb:765:in `block in log'
+activesupport (7.0.3.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activerecord (7.0.3.1) lib/active_record/connection_adapters/abstract_adapter.rb:756:in `log'
+activerecord (7.0.3.1) lib/active_record/connection_adapters/postgresql/database_statements.rb:46:in `execute'
+activerecord (7.0.3.1) lib/active_record/connection_adapters/abstract/schema_statements.rb:325:in `create_table'
+activerecord (7.0.3.1) lib/active_record/migration.rb:932:in `block in method_missing'
+activerecord (7.0.3.1) lib/active_record/migration.rb:900:in `block in say_with_time'
+/Users/praca/.rbenv/versions/3.1.2/lib/ruby/3.1.0/benchmark.rb:296:in `measure'
+activerecord (7.0.3.1) lib/active_record/migration.rb:900:in `say_with_time'
+activerecord (7.0.3.1) lib/active_record/migration.rb:921:in `method_missing'
+db/migrate/20220909145502_devise_create_users.rb:5:in `change'
+activerecord (7.0.3.1) lib/active_record/migration.rb:870:in `exec_migration'
+activerecord (7.0.3.1) lib/active_record/migration.rb:854:in `block (2 levels) in migrate'
+/Users/praca/.rbenv/versions/3.1.2/lib/ruby/3.1.0/benchmark.rb:296:in `measure'
+activerecord (7.0.3.1) lib/active_record/migration.rb:853:in `block in migrate'
+activerecord (7.0.3.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:215:in `with_connection'
+activerecord (7.0.3.1) lib/active_record/migration.rb:852:in `migrate'
+activerecord (7.0.3.1) lib/active_record/migration.rb:1046:in `migrate'
+activerecord (7.0.3.1) lib/active_record/migration.rb:1360:in `block in execute_migration_in_transaction'
+activerecord (7.0.3.1) lib/active_record/connection_adapters/abstract/transaction.rb:319:in `block in within_new_transaction'
+activesupport (7.0.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `handle_interrupt'
+activesupport (7.0.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:25:in `block in synchronize'
+activesupport (7.0.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `handle_interrupt'
+activesupport (7.0.3.1) lib/active_support/concurrency/load_interlock_aware_monitor.rb:21:in `synchronize'
+activerecord (7.0.3.1) lib/active_record/connection_adapters/abstract/transaction.rb:317:in `within_new_transaction'
+activerecord (7.0.3.1) lib/active_record/connection_adapters/abstract/database_statements.rb:316:in `transaction'
+activerecord (7.0.3.1) lib/active_record/transactions.rb:209:in `transaction'
+activerecord (7.0.3.1) lib/active_record/migration.rb:1411:in `ddl_transaction'
+activerecord (7.0.3.1) lib/active_record/migration.rb:1359:in `execute_migration_in_transaction'
+activerecord (7.0.3.1) lib/active_record/migration.rb:1333:in `each'
+activerecord (7.0.3.1) lib/active_record/migration.rb:1333:in `migrate_without_lock'
+activerecord (7.0.3.1) lib/active_record/migration.rb:1282:in `block in migrate'
+activerecord (7.0.3.1) lib/active_record/migration.rb:1432:in `block in with_advisory_lock'
+activerecord (7.0.3.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:215:in `with_connection'
+activerecord (7.0.3.1) lib/active_record/migration.rb:1447:in `with_advisory_lock_connection'
+activerecord (7.0.3.1) lib/active_record/migration.rb:1428:in `with_advisory_lock'
+activerecord (7.0.3.1) lib/active_record/migration.rb:1282:in `migrate'
+activerecord (7.0.3.1) lib/active_record/migration.rb:1117:in `up'
+activerecord (7.0.3.1) lib/active_record/migration.rb:1092:in `migrate'
+activerecord (7.0.3.1) lib/active_record/tasks/database_tasks.rb:262:in `migrate'
+activerecord (7.0.3.1) lib/active_record/migration.rb:137:in `block in <class:PendingMigrationError>'
+activesupport (7.0.3.1) lib/active_support/actionable_error.rb:28:in `dispatch'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/actionable_exceptions.rb:19:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3.1) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3.1) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3.1) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3.1) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3.1) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3.1) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3.1) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[35m (8081.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "lupa_development"[0m
+  [1m[35m (41.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "lupa_development"[0m
+  [1m[35m (23.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "lupa_test"[0m
+  [1m[35m (119.2ms)[0m  [1m[35mCREATE DATABASE "lupa_development" ENCODING = 'unicode'[0m
+  [1m[35m (34.6ms)[0m  [1m[35mCREATE DATABASE "lupa_test" ENCODING = 'unicode'[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5364670614761820600)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCategories (20220909135541)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "categories" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220909135541"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateProducts (20220909135717)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "products" ("id" bigserial primary key, "name" character varying, "description" character varying, "category_id" bigint NOT NULL, "price" float, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_fb915499a4"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE INDEX "index_products_on_category_id" ON "products" ("category_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220909135717"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateUsers (20220909145502)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp(6), "remember_created_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220909145502"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-09-09 14:57:07.453468"], ["updated_at", "2022-09-09 14:57:07.453468"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5364670614761820600)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/rails/actions" for 127.0.0.1 at 2022-09-09 16:57:17 +0200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5364670614761820600)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(5364670614761820600)[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/rails/actions" for 127.0.0.1 at 2022-09-09 16:57:17 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/rails/actions"):
+  
+Started GET "/admin/" for 127.0.0.1 at 2022-09-09 16:57:21 +0200
+Processing by Trestle::DashboardController#index as HTML
+Redirected to http://localhost:3000/admin/login
+Filter chain halted as :require_authenticated_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 1064)
+
+
+Started GET "/admin/login" for 127.0.0.1 at 2022-09-09 16:57:21 +0200
+Processing by Trestle::Auth::SessionsController#new as HTML
+  Rendering layout /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-auth-0.4.4/app/views/layouts/trestle/auth.html.erb
+  Rendering /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-auth-0.4.4/app/views/trestle/auth/sessions/new.html.erb within layouts/trestle/auth
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-auth-0.4.4/app/views/trestle/auth/sessions/_form.html.erb (Duration: 27.1ms | Allocations: 14297)
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-auth-0.4.4/app/views/trestle/auth/sessions/new.html.erb within layouts/trestle/auth (Duration: 28.4ms | Allocations: 15301)
+  Rendered layout /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-auth-0.4.4/app/views/layouts/trestle/auth.html.erb (Duration: 265.2ms | Allocations: 187297)
+Completed 500 Internal Server Error in 269ms (ActiveRecord: 0.0ms | Allocations: 190010)
+
+
+  
+LoadError (cannot load such file -- sassc):
+  
+bootsnap (1.13.0) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:17:in `require'
+bootsnap (1.13.0) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:17:in `require'
+zeitwerk (2.6.0) lib/zeitwerk/kernel.rb:35:in `require'
+sprockets (4.1.1) lib/sprockets/autoload/sassc.rb:2:in `<main>'
+bootsnap (1.13.0) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:32:in `require'
+bootsnap (1.13.0) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:32:in `require'
+zeitwerk (2.6.0) lib/zeitwerk/kernel.rb:35:in `require'
+sprockets (4.1.1) lib/sprockets/sassc_processor.rb:42:in `initialize'
+sprockets (4.1.1) lib/sprockets/sassc_processor.rb:27:in `new'
+sprockets (4.1.1) lib/sprockets/sassc_processor.rb:27:in `instance'
+sprockets (4.1.1) lib/sprockets/sassc_processor.rb:31:in `call'
+sprockets (4.1.1) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.1.1) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.1.1) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.1.1) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.1.1) lib/sprockets/processor_utils.rb:22:in `block in <class:CompositeProcessor>'
+sprockets (4.1.1) lib/sprockets/processor_utils.rb:33:in `call'
+sprockets (4.1.1) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.1.1) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.1.1) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.1.1) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.1.1) lib/sprockets/loader.rb:182:in `load_from_unloaded'
+sprockets (4.1.1) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.1.1) lib/sprockets/loader.rb:337:in `fetch_asset_from_dependency_cache'
+sprockets (4.1.1) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.1.1) lib/sprockets/cached_environment.rb:44:in `block in load'
+sprockets (4.1.1) lib/sprockets/cached_environment.rb:44:in `fetch'
+sprockets (4.1.1) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.1.1) lib/sprockets/bundle.rb:41:in `block in call'
+sprockets (4.1.1) lib/sprockets/utils.rb:170:in `dfs'
+sprockets (4.1.1) lib/sprockets/bundle.rb:42:in `call'
+sprockets (4.1.1) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.1.1) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.1.1) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.1.1) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.1.1) lib/sprockets/loader.rb:182:in `load_from_unloaded'
+sprockets (4.1.1) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.1.1) lib/sprockets/loader.rb:337:in `fetch_asset_from_dependency_cache'
+sprockets (4.1.1) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.1.1) lib/sprockets/cached_environment.rb:44:in `block in load'
+sprockets (4.1.1) lib/sprockets/cached_environment.rb:44:in `fetch'
+sprockets (4.1.1) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.1.1) lib/sprockets/base.rb:81:in `find_asset'
+sprockets (4.1.1) lib/sprockets/base.rb:88:in `find_all_linked_assets'
+sprockets (4.1.1) lib/sprockets/manifest.rb:125:in `each'
+sprockets (4.1.1) lib/sprockets/manifest.rb:125:in `to_a'
+sprockets (4.1.1) lib/sprockets/manifest.rb:125:in `block (2 levels) in find'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:47:in `block in synchronize'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:47:in `synchronize'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:47:in `synchronize'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:22:in `execute'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/promise.rb:564:in `block in realize'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:352:in `run_task'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:343:in `block (3 levels) in create_worker'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `loop'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `block (2 levels) in create_worker'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `catch'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `block in create_worker'
+Started GET "/admin/login" for 127.0.0.1 at 2022-09-09 16:57:50 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Trestle::Auth::SessionsController#new as HTML
+  Rendering layout /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-auth-0.4.4/app/views/layouts/trestle/auth.html.erb
+  Rendering /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-auth-0.4.4/app/views/trestle/auth/sessions/new.html.erb within layouts/trestle/auth
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-auth-0.4.4/app/views/trestle/auth/sessions/_form.html.erb (Duration: 8.7ms | Allocations: 5368)
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-auth-0.4.4/app/views/trestle/auth/sessions/new.html.erb within layouts/trestle/auth (Duration: 9.8ms | Allocations: 6589)
+  Rendered layout /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-auth-0.4.4/app/views/layouts/trestle/auth.html.erb (Duration: 60.3ms | Allocations: 60851)
+Completed 200 OK in 67ms (Views: 61.8ms | ActiveRecord: 0.0ms | Allocations: 64986)
+
+
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (5.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "admin@example.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2022-09-09 14:58:08.952148"], ["updated_at", "2022-09-09 14:58:08.952148"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/admin/login" for 127.0.0.1 at 2022-09-09 16:58:17 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Trestle::Auth::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/admin/
+Completed 302 Found in 261ms (ActiveRecord: 4.6ms | Allocations: 11741)
+
+
+Started GET "/admin/" for 127.0.0.1 at 2022-09-09 16:58:17 +0200
+Processing by Trestle::DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/admin/auth/users
+Completed 302 Found in 33ms (ActiveRecord: 0.3ms | Allocations: 57570)
+
+
+Started GET "/admin/auth/users" for 127.0.0.1 at 2022-09-09 16:58:17 +0200
+Processing by Auth::UsersAdmin::AdminController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-0.9.6/app/views/layouts/trestle/admin.html.erb
+  Rendering /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-0.9.6/app/views/trestle/resource/index.html.erb within layouts/trestle/admin
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-0.9.6/app/views/trestle/application/_header.html.erb (Duration: 1.3ms | Allocations: 2204)
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-0.9.6/app/views/trestle/flash/_flash.html.erb (Duration: 0.3ms | Allocations: 266)
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-0.9.6/app/views/trestle/application/_utilities.html.erb (Duration: 0.2ms | Allocations: 152)
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-0.9.6/app/views/trestle/application/_tabs.html.erb (Duration: 0.3ms | Allocations: 290)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-0.9.6/app/views/trestle/table/_table.html.erb (Duration: 2.7ms | Allocations: 3868)
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-0.9.6/app/views/trestle/table/_pagination.html.erb (Duration: 1.1ms | Allocations: 880)
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-0.9.6/app/views/trestle/application/_layout.html.erb (Duration: 9.3ms | Allocations: 10346)
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-0.9.6/app/views/trestle/resource/index.html.erb within layouts/trestle/admin (Duration: 11.1ms | Allocations: 11983)
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-0.9.6/app/views/trestle/shared/_title.html.erb (Duration: 0.3ms | Allocations: 332)
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-0.9.6/app/views/trestle/shared/_sidebar.html.erb (Duration: 1.4ms | Allocations: 1626)
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-auth-0.4.4/app/views/trestle/auth/_userbox.html.erb (Duration: 1.8ms | Allocations: 1672)
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-0.9.6/app/views/trestle/shared/_header.html.erb (Duration: 2.2ms | Allocations: 2062)
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-0.9.6/app/views/trestle/shared/_footer.html.erb (Duration: 0.3ms | Allocations: 264)
+  Rendered layout /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-0.9.6/app/views/layouts/trestle/admin.html.erb (Duration: 43.8ms | Allocations: 70062)
+Completed 200 OK in 49ms (Views: 44.9ms | ActiveRecord: 0.5ms | Allocations: 74703)
+
+
+Started GET "/admin/auth/users" for 127.0.0.1 at 2022-09-09 16:58:21 +0200
+Processing by Auth::UsersAdmin::AdminController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-0.9.6/app/views/layouts/trestle/admin.html.erb
+  Rendering /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-0.9.6/app/views/trestle/resource/index.html.erb within layouts/trestle/admin
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-0.9.6/app/views/trestle/application/_header.html.erb (Duration: 1.8ms | Allocations: 1588)
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-0.9.6/app/views/trestle/flash/_flash.html.erb (Duration: 0.1ms | Allocations: 36)
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-0.9.6/app/views/trestle/application/_utilities.html.erb (Duration: 0.0ms | Allocations: 16)
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-0.9.6/app/views/trestle/application/_tabs.html.erb (Duration: 0.0ms | Allocations: 20)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-0.9.6/app/views/trestle/table/_table.html.erb (Duration: 3.7ms | Allocations: 3065)
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-0.9.6/app/views/trestle/table/_pagination.html.erb (Duration: 0.4ms | Allocations: 231)
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-0.9.6/app/views/trestle/application/_layout.html.erb (Duration: 6.9ms | Allocations: 5657)
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-0.9.6/app/views/trestle/resource/index.html.erb within layouts/trestle/admin (Duration: 7.7ms | Allocations: 6180)
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-0.9.6/app/views/trestle/shared/_title.html.erb (Duration: 0.0ms | Allocations: 31)
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-0.9.6/app/views/trestle/shared/_sidebar.html.erb (Duration: 0.5ms | Allocations: 668)
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-auth-0.4.4/app/views/trestle/auth/_userbox.html.erb (Duration: 0.4ms | Allocations: 466)
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-0.9.6/app/views/trestle/shared/_header.html.erb (Duration: 0.5ms | Allocations: 568)
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-0.9.6/app/views/trestle/shared/_footer.html.erb (Duration: 0.0ms | Allocations: 47)
+  Rendered layout /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-0.9.6/app/views/layouts/trestle/admin.html.erb (Duration: 16.5ms | Allocations: 18189)
+Completed 200 OK in 21ms (Views: 16.7ms | ActiveRecord: 0.8ms | Allocations: 20376)
+
+
+Started GET "/admin/auth/users" for 127.0.0.1 at 2022-09-09 16:58:50 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Auth::UsersAdmin::AdminController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-0.9.6/app/views/layouts/trestle/admin.html.erb
+  Rendering /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-0.9.6/app/views/trestle/resource/index.html.erb within layouts/trestle/admin
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-0.9.6/app/views/trestle/application/_header.html.erb (Duration: 1.7ms | Allocations: 2554)
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-0.9.6/app/views/trestle/flash/_flash.html.erb (Duration: 0.2ms | Allocations: 270)
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-0.9.6/app/views/trestle/application/_utilities.html.erb (Duration: 0.1ms | Allocations: 152)
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-0.9.6/app/views/trestle/application/_tabs.html.erb (Duration: 0.2ms | Allocations: 291)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT $1 OFFSET $2[0m  [["LIMIT", 25], ["OFFSET", 0]]
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-0.9.6/app/views/trestle/table/_table.html.erb (Duration: 3.1ms | Allocations: 3899)
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-0.9.6/app/views/trestle/table/_pagination.html.erb (Duration: 1.0ms | Allocations: 881)
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-0.9.6/app/views/trestle/application/_layout.html.erb (Duration: 10.0ms | Allocations: 10734)
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-0.9.6/app/views/trestle/resource/index.html.erb within layouts/trestle/admin (Duration: 11.7ms | Allocations: 12415)
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-0.9.6/app/views/trestle/shared/_title.html.erb (Duration: 0.2ms | Allocations: 332)
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-0.9.6/app/views/trestle/shared/_sidebar.html.erb (Duration: 4.5ms | Allocations: 12798)
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-auth-0.4.4/app/views/trestle/auth/_userbox.html.erb (Duration: 1.3ms | Allocations: 1583)
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-0.9.6/app/views/trestle/shared/_header.html.erb (Duration: 1.7ms | Allocations: 2013)
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-0.9.6/app/views/trestle/shared/_footer.html.erb (Duration: 0.3ms | Allocations: 264)
+  Rendered layout /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-0.9.6/app/views/layouts/trestle/admin.html.erb (Duration: 51.1ms | Allocations: 81791)
+Completed 200 OK in 82ms (Views: 52.1ms | ActiveRecord: 7.4ms | Allocations: 97996)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:04:03 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApplicationController#index as HTML
+Completed 406 Not Acceptable in 4ms (ActiveRecord: 0.0ms | Allocations: 2312)
+
+
+  
+ActionController::MissingExactTemplate (ApplicationController#index is missing a template for request formats: text/html):
+  
+actionpack (7.0.3.1) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (7.0.3.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+<internal:kernel>:90:in `tap'
+actionpack (7.0.3.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (7.0.3.1) lib/abstract_controller/base.rb:215:in `process_action'
+actionpack (7.0.3.1) lib/action_controller/metal/rendering.rb:53:in `process_action'
+actionpack (7.0.3.1) lib/abstract_controller/callbacks.rb:234:in `block in process_action'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+actiontext (7.0.3.1) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.3.1) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.3.1) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.3.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.3.1) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.3.1) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.3.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.3.1) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.3.1) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.3.1) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.3.1) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.3.1) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.3.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.3.1) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.3.1) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.3.1) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.3.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.3.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.3.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.3.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.3.1) lib/action_dispatch/routing/route_set.rb:852:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3.1) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3.1) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3.1) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3.1) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3.1) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3.1) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3.1) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3.1) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:05:06 +0200
+  
+Zeitwerk::NameError (expected file /Users/praca/Documents/lupa/app/controllers/client_controller.rb to define constant ClientController, but didn't
+
+      raise Zeitwerk::NameError.new("expected file #{file} to define constant #{cpath}, but didn't", cref.last)
+      ^^^^^):
+  
+zeitwerk (2.6.0) lib/zeitwerk/loader/callbacks.rb:25:in `on_file_autoloaded'
+zeitwerk (2.6.0) lib/zeitwerk/kernel.rb:28:in `require'
+activesupport (7.0.3.1) lib/active_support/inflector/methods.rb:280:in `const_get'
+activesupport (7.0.3.1) lib/active_support/inflector/methods.rb:280:in `constantize'
+activesupport (7.0.3.1) lib/active_support/core_ext/string/inflections.rb:74:in `constantize'
+actionpack (7.0.3.1) lib/action_dispatch/http/request.rb:90:in `controller_class_for'
+actionpack (7.0.3.1) lib/action_dispatch/request/utils.rb:95:in `action_encoding_template'
+actionpack (7.0.3.1) lib/action_dispatch/request/utils.rb:83:in `encode'
+actionpack (7.0.3.1) lib/action_dispatch/request/utils.rb:45:in `set_binary_encoding'
+actionpack (7.0.3.1) lib/action_dispatch/http/parameters.rb:68:in `path_parameters='
+actionpack (7.0.3.1) lib/action_dispatch/journey/router.rb:48:in `block in serve'
+actionpack (7.0.3.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.3.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.3.1) lib/action_dispatch/routing/route_set.rb:852:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3.1) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3.1) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3.1) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3.1) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3.1) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3.1) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3.1) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3.1) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:05:07 +0200
+  
+ActionController::RoutingError (uninitialized constant ClientController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:05:08 +0200
+  
+ActionController::RoutingError (uninitialized constant ClientController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:05:09 +0200
+  
+ActionController::RoutingError (uninitialized constant ClientController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:05:16 +0200
+Processing by ClientController#index as HTML
+Completed 406 Not Acceptable in 0ms (ActiveRecord: 0.0ms | Allocations: 655)
+
+
+  
+ActionController::MissingExactTemplate (ClientController#index is missing a template for request formats: text/html):
+  
+actionpack (7.0.3.1) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (7.0.3.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+<internal:kernel>:90:in `tap'
+actionpack (7.0.3.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (7.0.3.1) lib/abstract_controller/base.rb:215:in `process_action'
+actionpack (7.0.3.1) lib/action_controller/metal/rendering.rb:53:in `process_action'
+actionpack (7.0.3.1) lib/abstract_controller/callbacks.rb:234:in `block in process_action'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+actiontext (7.0.3.1) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.3.1) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.3.1) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.3.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.3.1) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.3.1) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.3.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.3.1) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.3.1) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.3.1) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.3.1) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.3.1) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.3.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.3.1) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.3.1) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.3.1) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.3.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.3.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.3.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.3.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.3.1) lib/action_dispatch/routing/route_set.rb:852:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3.1) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3.1) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3.1) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3.1) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3.1) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3.1) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3.1) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3.1) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:05:34 +0200
+Processing by ClientController#index as HTML
+  Rendering client/index.html.erb
+  Rendered client/index.html.erb (Duration: 0.2ms | Allocations: 151)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms | Allocations: 1297)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:06:02 +0200
+Processing by ClientController#index as HTML
+  Rendering client/index.html.erb
+  Rendered client/index.html.erb (Duration: 0.1ms | Allocations: 18)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 324)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:06:02 +0200
+Processing by ClientController#index as HTML
+  Rendering client/index.html.erb
+  Rendered client/index.html.erb (Duration: 0.1ms | Allocations: 18)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 305)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:06:03 +0200
+Processing by ClientController#index as HTML
+  Rendering client/index.html.erb
+  Rendered client/index.html.erb (Duration: 0.1ms | Allocations: 18)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 305)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:06:04 +0200
+Processing by ClientController#index as HTML
+  Rendering client/index.html.erb
+  Rendered client/index.html.erb (Duration: 0.0ms | Allocations: 18)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 304)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:06:28 +0200
+Processing by ClientController#index as HTML
+  Rendering client/index.html.erb
+  Rendered client/index.html.erb (Duration: 0.5ms | Allocations: 152)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms | Allocations: 1138)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:06:35 +0200
+Processing by ClientController#index as HTML
+  Rendering client/index.html.erb
+  Rendered client/index.html.erb (Duration: 0.0ms | Allocations: 18)
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 322)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:06:57 +0200
+Processing by ClientController#index as HTML
+  Rendering client/index.html.erb
+  Rendered client/index.html.erb (Duration: 0.5ms | Allocations: 265)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms | Allocations: 1251)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:06:57 +0200
+Processing by ClientController#index as HTML
+  Rendering client/index.html.erb
+  Rendered client/index.html.erb (Duration: 0.0ms | Allocations: 18)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 322)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:07:14 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ClientController#index as HTML
+  Rendering client/index.html.erb
+  Rendered client/index.html.erb (Duration: 0.4ms | Allocations: 343)
+Completed 200 OK in 7ms (Views: 3.8ms | ActiveRecord: 0.0ms | Allocations: 3905)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:07:14 +0200
+Processing by ClientController#index as HTML
+  Rendering client/index.html.erb
+  Rendered client/index.html.erb (Duration: 0.1ms | Allocations: 21)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 372)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:07:15 +0200
+Processing by ClientController#index as HTML
+  Rendering client/index.html.erb
+  Rendered client/index.html.erb (Duration: 0.0ms | Allocations: 19)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 309)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:07:16 +0200
+Processing by ClientController#index as HTML
+  Rendering client/index.html.erb
+  Rendered client/index.html.erb (Duration: 0.0ms | Allocations: 18)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 305)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:07:16 +0200
+Processing by ClientController#index as HTML
+  Rendering client/index.html.erb
+  Rendered client/index.html.erb (Duration: 0.0ms | Allocations: 18)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 306)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:07:22 +0200
+Processing by ClientController#index as HTML
+  Rendering client/index.html.erb
+  Rendered client/index.html.erb (Duration: 0.5ms | Allocations: 265)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms | Allocations: 1265)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:07:22 +0200
+Processing by ClientController#index as HTML
+  Rendering client/index.html.erb
+  Rendered client/index.html.erb (Duration: 0.0ms | Allocations: 19)
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 329)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:07:22 +0200
+Processing by ClientController#index as HTML
+  Rendering client/index.html.erb
+  Rendered client/index.html.erb (Duration: 0.0ms | Allocations: 18)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 304)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:07:22 +0200
+Processing by ClientController#index as HTML
+  Rendering client/index.html.erb
+  Rendered client/index.html.erb (Duration: 0.0ms | Allocations: 18)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 304)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:07:23 +0200
+Processing by ClientController#index as HTML
+  Rendering client/index.html.erb
+  Rendered client/index.html.erb (Duration: 0.0ms | Allocations: 18)
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 304)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:07:23 +0200
+Processing by ClientController#index as HTML
+  Rendering client/index.html.erb
+  Rendered client/index.html.erb (Duration: 0.0ms | Allocations: 18)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 304)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:07:23 +0200
+Processing by ClientController#index as HTML
+  Rendering client/index.html.erb
+  Rendered client/index.html.erb (Duration: 0.1ms | Allocations: 18)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 304)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:08:55 +0200
+Processing by ClientController#index as HTML
+  Rendering client/index.html.erb
+  Rendered client/index.html.erb (Duration: 0.6ms | Allocations: 261)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 1247)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:08:56 +0200
+Processing by ClientController#index as HTML
+  Rendering client/index.html.erb
+  Rendered client/index.html.erb (Duration: 0.1ms | Allocations: 18)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 322)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:08:56 +0200
+Processing by ClientController#index as HTML
+  Rendering client/index.html.erb
+  Rendered client/index.html.erb (Duration: 0.0ms | Allocations: 18)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 304)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:08:56 +0200
+Processing by ClientController#index as HTML
+  Rendering client/index.html.erb
+  Rendered client/index.html.erb (Duration: 0.1ms | Allocations: 18)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 304)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:08:56 +0200
+Processing by ClientController#index as HTML
+  Rendering client/index.html.erb
+  Rendered client/index.html.erb (Duration: 0.0ms | Allocations: 18)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 305)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:08:57 +0200
+Processing by ClientController#index as HTML
+  Rendering client/index.html.erb
+  Rendered client/index.html.erb (Duration: 0.0ms | Allocations: 18)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 305)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:08:57 +0200
+Processing by ClientController#index as HTML
+  Rendering client/index.html.erb
+  Rendered client/index.html.erb (Duration: 0.1ms | Allocations: 18)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 304)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:09:00 +0200
+Processing by ClientController#index as HTML
+  Rendering client/index.html.erb
+  Rendered client/index.html.erb (Duration: 0.0ms | Allocations: 18)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 304)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:09:07 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ClientController#index as HTML
+  Rendering client/index.html.erb
+  Rendered client/index.html.erb (Duration: 0.4ms | Allocations: 343)
+Completed 200 OK in 7ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 3905)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:09:08 +0200
+Processing by ClientController#index as HTML
+  Rendering client/index.html.erb
+  Rendered client/index.html.erb (Duration: 0.0ms | Allocations: 21)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 372)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:11:55 +0200
+Processing by ClientController#index as HTML
+  Rendering client/index.html.erb
+  Rendered client/index.html.erb (Duration: 21.7ms | Allocations: 13886)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms | Allocations: 14881)
+
+
+  
+ActionView::Template::Error (Missing partial layouts/_application with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/Users/praca/Documents/lupa/app/views"
+  * "/Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-auth-0.4.4/app/views"
+  * "/Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-0.9.6/app/views"
+  * "/Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/kaminari-core-1.2.2/app/views"
+  * "/Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.8.1/app/views"
+  * "/Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.3.1/app/views"
+  * "/Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actionmailbox-7.0.3.1/app/views"
+
+Did you mean?  layouts/action_text/contents/content
+               trestle/table/pagination
+               kaminari/trestle/paginator
+               kaminari/trestle/gap
+               kaminari/paginator
+               kaminari/trestle/last_page):
+    1: <%= render 'layouts/application' %>
+    2: <header>
+    3:   Lupa
+    4: </header>
+  
+app/views/client/index.html.erb:1
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:11:56 +0200
+Processing by ClientController#index as HTML
+  Rendering client/index.html.erb
+  Rendered client/index.html.erb (Duration: 6.9ms | Allocations: 5232)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 5534)
+
+
+  
+ActionView::Template::Error (Missing partial layouts/_application with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/Users/praca/Documents/lupa/app/views"
+  * "/Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-auth-0.4.4/app/views"
+  * "/Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-0.9.6/app/views"
+  * "/Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/kaminari-core-1.2.2/app/views"
+  * "/Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.8.1/app/views"
+  * "/Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.3.1/app/views"
+  * "/Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actionmailbox-7.0.3.1/app/views"
+
+Did you mean?  layouts/action_text/contents/content
+               trestle/table/pagination
+               kaminari/trestle/paginator
+               kaminari/trestle/gap
+               kaminari/paginator
+               kaminari/trestle/last_page):
+    1: <%= render 'layouts/application' %>
+    2: <header>
+    3:   Lupa
+    4: </header>
+  
+app/views/client/index.html.erb:1
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:23:05 +0200
+Processing by ClientController#index as HTML
+  Rendering client/index.html.erb
+  Rendered client/index.html.erb (Duration: 0.4ms | Allocations: 265)
+Completed 200 OK in 2ms (Views: 1.8ms | Allocations: 1229)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:23:06 +0200
+Processing by ClientController#index as HTML
+  Rendering client/index.html.erb
+  Rendered client/index.html.erb (Duration: 0.0ms | Allocations: 18)
+Completed 200 OK in 0ms (Views: 0.3ms | Allocations: 318)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:24:07 +0200
+Processing by ClientController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering client/index.html.erb within layouts/application
+  Rendered client/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 26)
+  Rendered layout layouts/application.html.erb (Duration: 60.0ms | Allocations: 85243)
+Completed 500 Internal Server Error in 61ms (Allocations: 85917)
+
+
+  
+ActionView::Template::Error (Asset `style.css` was not declared to be precompiled in production.
+Declare links to your assets in `app/assets/config/manifest.js`.
+
+  //= link style.css
+
+and restart your server):
+     7:     <%= csp_meta_tag %>
+     8: 
+     9:     <%#= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    10:     <%= stylesheet_link_tag 'style.css' %>
+    11:     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    12:   </head>
+    13: 
+  
+app/views/layouts/application.html.erb:10
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:24:08 +0200
+Processing by ClientController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering client/index.html.erb within layouts/application
+  Rendered client/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 18)
+  Rendered layout layouts/application.html.erb (Duration: 32.5ms | Allocations: 38703)
+Completed 500 Internal Server Error in 35ms (Allocations: 38949)
+
+
+  
+ActionView::Template::Error (Asset `style.css` was not declared to be precompiled in production.
+Declare links to your assets in `app/assets/config/manifest.js`.
+
+  //= link style.css
+
+and restart your server):
+     7:     <%= csp_meta_tag %>
+     8: 
+     9:     <%#= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    10:     <%= stylesheet_link_tag 'style.css' %>
+    11:     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    12:   </head>
+    13: 
+  
+app/views/layouts/application.html.erb:10
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:24:09 +0200
+Processing by ClientController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering client/index.html.erb within layouts/application
+  Rendered client/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 18)
+  Rendered layout layouts/application.html.erb (Duration: 29.4ms | Allocations: 38685)
+Completed 500 Internal Server Error in 30ms (Allocations: 38915)
+
+
+  
+ActionView::Template::Error (Asset `style.css` was not declared to be precompiled in production.
+Declare links to your assets in `app/assets/config/manifest.js`.
+
+  //= link style.css
+
+and restart your server):
+     7:     <%= csp_meta_tag %>
+     8: 
+     9:     <%#= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    10:     <%= stylesheet_link_tag 'style.css' %>
+    11:     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    12:   </head>
+    13: 
+  
+app/views/layouts/application.html.erb:10
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:24:09 +0200
+Processing by ClientController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering client/index.html.erb within layouts/application
+  Rendered client/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 18)
+  Rendered layout layouts/application.html.erb (Duration: 29.9ms | Allocations: 38545)
+Completed 500 Internal Server Error in 31ms (Allocations: 38775)
+
+
+  
+ActionView::Template::Error (Asset `style.css` was not declared to be precompiled in production.
+Declare links to your assets in `app/assets/config/manifest.js`.
+
+  //= link style.css
+
+and restart your server):
+     7:     <%= csp_meta_tag %>
+     8: 
+     9:     <%#= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    10:     <%= stylesheet_link_tag 'style.css' %>
+    11:     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    12:   </head>
+    13: 
+  
+app/views/layouts/application.html.erb:10
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:24:28 +0200
+Processing by ClientController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering client/index.html.erb within layouts/application
+  Rendered client/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 258)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 2693)
+Completed 200 OK in 5ms (Views: 4.6ms | Allocations: 3577)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:24:28 +0200
+Processing by ClientController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering client/index.html.erb within layouts/application
+  Rendered client/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 18)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | Allocations: 2059)
+Completed 200 OK in 2ms (Views: 1.6ms | Allocations: 2332)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:24:29 +0200
+Processing by ClientController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering client/index.html.erb within layouts/application
+  Rendered client/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 18)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 2004)
+Completed 200 OK in 3ms (Views: 2.7ms | Allocations: 2259)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:24:29 +0200
+Processing by ClientController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering client/index.html.erb within layouts/application
+  Rendered client/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 18)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 2001)
+Completed 200 OK in 4ms (Views: 3.4ms | Allocations: 2256)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:24:29 +0200
+Processing by ClientController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering client/index.html.erb within layouts/application
+  Rendered client/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 18)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | Allocations: 1998)
+Completed 200 OK in 4ms (Views: 3.6ms | Allocations: 2253)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:25:12 +0200
+Processing by ClientController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering client/index.html.erb within layouts/application
+  Rendered client/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 261)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 2204)
+Completed 200 OK in 8ms (Views: 7.3ms | Allocations: 3084)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:25:15 +0200
+Processing by ClientController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering client/index.html.erb within layouts/application
+  Rendered client/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 258)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 2197)
+Completed 200 OK in 5ms (Views: 4.1ms | Allocations: 3094)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:25:34 +0200
+Processing by ClientController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering client/index.html.erb within layouts/application
+  Rendered client/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 258)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 2208)
+Completed 200 OK in 6ms (Views: 5.1ms | Allocations: 3105)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-16 15:25:35 +0200
+Processing by ClientController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering client/index.html.erb within layouts/application
+  Rendered client/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 18)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | Allocations: 1390)
+Completed 200 OK in 3ms (Views: 2.4ms | Allocations: 1662)
+
+
+Started GET "/admin/" for 127.0.0.1 at 2022-09-16 15:25:41 +0200
+Processing by Trestle::DashboardController#index as HTML
+Redirected to http://0.0.0.0:3000/admin/login
+Filter chain halted as :require_authenticated_user rendered or redirected
+Completed 302 Found in 2ms (Allocations: 1102)
+
+
+Started GET "/admin/login" for 127.0.0.1 at 2022-09-16 15:25:41 +0200
+Processing by Trestle::Auth::SessionsController#new as HTML
+  Rendering layout /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-auth-0.4.4/app/views/layouts/trestle/auth.html.erb
+  Rendering /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-auth-0.4.4/app/views/trestle/auth/sessions/new.html.erb within layouts/trestle/auth
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-auth-0.4.4/app/views/trestle/auth/sessions/_form.html.erb (Duration: 10.3ms | Allocations: 5334)
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-auth-0.4.4/app/views/trestle/auth/sessions/new.html.erb within layouts/trestle/auth (Duration: 12.2ms | Allocations: 6326)
+  Rendered layout /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-auth-0.4.4/app/views/layouts/trestle/auth.html.erb (Duration: 17.5ms | Allocations: 13715)
+Completed 200 OK in 19ms (Views: 18.2ms | Allocations: 15112)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2022-09-16 15:25:44 +0200
+Processing by Trestle::Auth::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Login"}
+  [1m[36mUser Load (6.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+Redirected to http://0.0.0.0:3000/admin/login
+Completed 302 Found in 340ms (ActiveRecord: 41.5ms | Allocations: 12666)
+
+
+Started GET "/admin/login" for 127.0.0.1 at 2022-09-16 15:25:44 +0200
+Processing by Trestle::Auth::SessionsController#new as HTML
+  Rendering layout /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-auth-0.4.4/app/views/layouts/trestle/auth.html.erb
+  Rendering /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-auth-0.4.4/app/views/trestle/auth/sessions/new.html.erb within layouts/trestle/auth
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-auth-0.4.4/app/views/trestle/auth/sessions/_form.html.erb (Duration: 0.3ms | Allocations: 626)
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-auth-0.4.4/app/views/trestle/auth/sessions/new.html.erb within layouts/trestle/auth (Duration: 0.6ms | Allocations: 1001)
+  Rendered layout /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-auth-0.4.4/app/views/layouts/trestle/auth.html.erb (Duration: 4.2ms | Allocations: 7816)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms | Allocations: 8544)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2022-09-16 15:25:52 +0200
+Processing by Trestle::Auth::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"admin", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "admin"], ["LIMIT", 1]]
+Redirected to http://0.0.0.0:3000/admin/login
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms | Allocations: 2043)
+
+
+Started GET "/admin/login" for 127.0.0.1 at 2022-09-16 15:25:52 +0200
+Processing by Trestle::Auth::SessionsController#new as HTML
+  Rendering layout /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-auth-0.4.4/app/views/layouts/trestle/auth.html.erb
+  Rendering /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-auth-0.4.4/app/views/trestle/auth/sessions/new.html.erb within layouts/trestle/auth
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-auth-0.4.4/app/views/trestle/auth/sessions/_form.html.erb (Duration: 5.8ms | Allocations: 560)
+  Rendered /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-auth-0.4.4/app/views/trestle/auth/sessions/new.html.erb within layouts/trestle/auth (Duration: 6.2ms | Allocations: 897)
+  Rendered layout /Users/praca/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/trestle-auth-0.4.4/app/views/layouts/trestle/auth.html.erb (Duration: 10.8ms | Allocations: 7718)
+Completed 200 OK in 11ms (Views: 11.0ms | ActiveRecord: 0.0ms | Allocations: 8331)
+
+
