@@ -52,7 +52,10 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 # Custom gems
-gem "administration-zero"
+gem 'devise'
+gem 'trestle'
+gem 'trestle-auth'
+gem 'sassc-rails'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
