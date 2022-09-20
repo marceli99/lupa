@@ -56,6 +56,8 @@ gem 'devise'
 gem 'trestle'
 gem 'trestle-auth'
 gem 'sassc-rails'
+# soft delete
+gem "paranoia", "~> 2.2"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
