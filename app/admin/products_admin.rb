@@ -3,6 +3,10 @@ Trestle.resource(:products) do
     item :products, icon: "fa fa-star"
   end
 
+  active_storage_fields do
+    [:image]
+  end
+
   # Customize the table columns shown on the index view.
   #
   # table do
@@ -12,6 +16,13 @@ Trestle.resource(:products) do
   # end
 
   # Customize the form fields shown on the new/edit views.
+  form do |product|
+    text_field :name
+    text_field :description
+    select :category_id, Category.pluck(:name, :id)
+    active_storage_field :image
+    text_field :price
+  end
   #
   # form do |product|
   #   text_field :name

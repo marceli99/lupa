@@ -5,22 +5,15 @@ Trestle.resource(:categories) do
 
   # Customize the table columns shown on the index view.
   #
-  # table do
-  #   column :name
-  #   column :created_at, align: :center
-  #   actions
-  # end
+  table do
+    column :name
+    column :created_at, align: :center
+    actions
+  end
 
-  # Customize the form fields shown on the new/edit views.
-  #
-  # form do |category|
-  #   text_field :name
-  #
-  #   row do
-  #     col { datetime_field :updated_at }
-  #     col { datetime_field :created_at }
-  #   end
-  # end
+  form do |category|
+    text_field :name, label: I18n.t('category.name')
+  end
 
   # By default, all parameters passed to the update and create actions will be
   # permitted. If you do not have full trust in your users, you should explicitly

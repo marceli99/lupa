@@ -1,19 +1,322 @@
-// Entry point for your Sass build
+@import 'settings.sass.scss';
+@import 'cart.sass.scss';
+
+$border-color: #dadada;
+
 body {
-  background: #fff;
+  height: 0;
   margin: 0 auto;
-  font-family: Roboto;
+  font-family: "Open Sans", sans-serif;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   min-height: 100vh;
+  overflow: hidden;
+  color: #333;
 }
 
 main {
+  overflow: scroll;
+}
+
+aside {
+  border-left: 1px solid #d0d0d0;
+  width: 100rem;
+  -webkit-box-shadow: -2px 0px 60px 0px rgba(66, 68, 90, 0.3);
+  -moz-box-shadow: -2px 0px 60px 0px rgba(66, 68, 90, 0.3);
+  box-shadow: -2px 0px 60px 0px rgba(66, 68, 90, 0.3);
+  z-index: 1;
+
+  h2 {
+    margin: 0;
+    text-align: center;
+    padding: 0;
+  }
+
+  h5 {
+    color: gray;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+
+.dishes {
+  background-color: #F6F6F6;
+  padding: 1em 8em;
+
+  h2 {
+    margin: 0 0 0.5em 0;
+  }
+
+  .dishes-list {
+    display: flex;
+    flex-wrap: wrap;
+    // TODO: Fix uneven alignment of items
+    justify-content: space-between;
+    gap: 1em;
+
+    .dish {
+      display: flex;
+      flex-direction: column;
+      max-width: 30%;
+      border-radius: 6px;
+      margin: 0 0 0.3em 0;
+      background-color: white;
+      -webkit-box-shadow: 0 0 1px 0 rgba(66, 68, 90, 1);
+      -moz-box-shadow: 0 0 1px 0 rgba(66, 68, 90, 1);
+      //box-shadow: 0 0 1px 0 rgba(66, 68, 90, 1);
+      box-shadow: 0 0 10px 1px rgba(66, 68, 90, 0.1);
+
+      .image {
+        max-height: 10em;
+        flex: 1;
+      }
+
+      img {
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .details {
+        display: flex;
+        flex-direction: column;
+        padding: 0.4em 0.8em;
+
+        .row {
+          display: flex;
+          justify-content: space-between;
+
+          .btn {
+            padding: 0.5em 1.5em;
+            border: none;
+          }
+        }
+
+        .description {
+          padding: 0.1em 0 0.4em 0;
+          font-size: 0.7em;
+          color: #666666;
+        }
+      }
+    }
+  }
+}
+
+.categories {
+  width: 100%;
+  padding: 0;
+  border-bottom: 1px solid $border-color;
+  background: white;
+  position: sticky;
+  top: 0;
+
+  ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    margin: 0;
+    padding: 0 4em;
+
+    li {
+      padding: 0.8em 1.4em;
+
+      &.selected {
+        background-color: #FE9018;
+        color: white;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  h3 {
+    margin: 0;
+    font-weight: normal;
+  }
+}
+
+aside {
+  turbo-frame {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+}
+
+.space-filler {
+  flex: 1;
+}
+
+.cart-footer {
+  bottom: 0;
+
+  .cart-price {
+    background: white;
+    display: flex;
+    padding: 0.2em 1em;
+    border-top: 1px solid $border-color;
+    justify-content: space-between;
+
+    span {
+      font-size: 0.9em;
+    }
+  }
+
+  .checkout-btn {
+    width: 100%;
+    min-height: 4em;
+    height: 4em;
+    border-top: 1px solid $border-color;
+    background: #FE9018;
+  }
+
+  form {
+    width: 100%;
+    height: 100%;
+  }
+  .btn {
+    font-size: 1.2em;
+    width: 100%;
+    height: 100%;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.cart-title {
+  padding: 0.6em 0;
+  border-bottom: 1px solid $border-color;
+}
+
+.cart-products {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  background: #fff;
+  overflow: scroll;
+
+  .content {
+    display: flex;
+    position: relative;
+
+    .image {
+      position: absolute;
+      height: 100%;
+
+      img {
+        height: 100%;
+        width: 5em;
+        object-fit: cover;
+        border-right: 1px solid $border-color;
+      }
+    }
+
+    .description {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 0.3em 1em 0.3em 6em;
+
+      p {
+        margin: 0;
+      }
+
+      .details {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .category {
+          color: #cbcbcb;
+          font-size: 0.9em;
+        }
+
+        .price {
+          color: #6ED54B;
+          font-size: 0.9em;
+        }
+      }
+    }
+  }
+
+  .actions {
+    padding: 0.5em 1em 0.5em 0.35em;
+    display: flex;
+    justify-content: space-between;
+
+    .count {
+      display: flex;
+      align-items: center;
+      gap: 0.4em;
+
+      form {
+        width: 100%;
+        height: 100%;
+        border-radius: 5em;
+
+        &:hover {
+          background: #ddd;
+        }
+      }
+
+      button {
+        background-color: transparent;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+      }
+
+      img {
+        filter: invert(1);
+        border-radius: 100%;
+        width: 100%;
+        height: 100%;
+        padding: 0.2em;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      span {
+        user-select: none;
+      }
+    }
+  }
+
+  hr {
+    border: none;
+    border-bottom: 1px solid $border-color;
+    width: 100%;
+    margin: 0;
+
+    &.thin {
+      border-bottom: 1px solid lightgray;
+    }
+  }
+}
+
+.btn {
+  background-color: #FE9018;
+  color: white;
+  padding: 0.5em 1em;
+  font-size: 0.75em;
+  border-radius: 6px;
+  border: none;
+  transition: background-color .15s;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #ffa23f;
+  }
 }
 
 article {
@@ -24,14 +327,26 @@ article {
 }
 
 header {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 30vh;
-  min-height: 200px;
+  min-height: 3.5em;
   font-size: 4rem;
-  background: #444;
-  margin-bottom: 50px;
+  width: 100%;
+  color: white;
+
+  text-shadow: 3px 0px 7px rgba(81,67,21,0.8),
+  -3px 0px 7px rgba(81,67,21,0.8),
+  0px 4px 7px rgba(81,67,21,0.8);
+
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
 }
 
 .thing {
@@ -80,12 +395,6 @@ footer {
   color: white;
   background: #333;
   margin-top: 50px;
-}
-
-hr {
-  border: 2px solid #444;
-  width: 10vw;
-  min-width: 50px;
 }
 
 .light {

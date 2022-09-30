@@ -49,12 +49,14 @@ gem "bootsnap", require: false
 # gem "sassc-rails"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem "image_processing", "~> 1.2"
+gem "image_processing", "~> 1.2"
+gem 'mini_magick', '~> 4.5', '>= 4.5.1'
 
 # Custom gems
 gem 'devise'
 gem 'trestle'
 gem 'trestle-auth'
+gem 'trestle-active_storage', git: 'https://github.com/rzilient-club/trestle-active_storage.git'
 gem 'sassc-rails'
 # soft delete
 gem "paranoia", "~> 2.2"
@@ -81,3 +83,5 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "importmap-rails", "~> 1.1"

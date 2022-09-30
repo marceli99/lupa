@@ -1,0 +1,57 @@
+<%= turbo_frame_tag 'cart' do %>
+  <div class="cart-title">
+    <h5><%= @cart.orderables.count %> items inside</h5>
+    <h2>Checkout</h2>
+  </div>
+  <%= form_with url: payment_path, class: 'cart_form' do |f| %>
+    <div class="cart_header">
+      <h1 class="title">Dane kontaktowe</h1>
+      <hr>
+    </div>
+    <div class="field">
+      <input class="input" type="text" name="input_email" required>
+      <label class="label"><%= I18n.t('full_name') %></label>
+      <div class="underline"></div>
+    </div>
+    <div class="field">
+      <input class="input" type="text" name="input_email" required>
+      <label class="label"><%= I18n.t('phone_number') %></label>
+      <div class="underline"></div>
+    </div>
+    <div class="field">
+      <input class="input" type="text" name="input_email" required>
+      <label class="label"><%= I18n.t('email') %></label>
+      <div class="underline"></div>
+    </div>
+    <div class="cart_header">
+      <h1 class="title"><%= I18n.t('delivery_method') %></h1>
+      <hr>
+    </div>
+    <div class="radio">
+      <label for="delivery" class="label">
+        <%= I18n.t('delivery') %>
+        <input id="delivery" type="radio" checked="checked" name="delivery_method" value="delivery">
+        <span class="checkmark"></span>
+      </label>
+      <label for="self_pickup" class="label">
+        <%= I18n.t('self_pickup') %>
+        <input id="self_pickup" type="radio" name="delivery_method" value="self_pickup">
+        <span class="checkmark"></span>
+      </label>
+    </div>
+    <div class="cart_header">
+      <h1 class="title"><%= I18n.t('order_for') %></h1>
+      <hr>
+    </div>
+  <% end %>
+  <div class="space-filler"></div>
+  <div class="cart-footer">
+    <div class="cart-price">
+      <span><%= I18n.t('total') %>:</span>
+      <span><%= format_price(@cart.total) %></span>
+    </div>
+    <div class="checkout-btn">
+      <%= button_to 'Back to cart', cart_show_path, class: 'btn' %>
+    </div>
+  </div>
+<% end %>

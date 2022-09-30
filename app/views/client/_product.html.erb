@@ -1,0 +1,20 @@
+<div class="dish">
+  <div class="image">
+    <% if product.image.attached? %>
+      <%= image_tag product.image %>
+    <% else %>
+      <%= image_tag 'missing_waffle.jpg' %>
+    <% end %>
+  </div>
+  <div class="details">
+    <span><%= product.name %></span>
+    <span class="description"><%= product.description %></span>
+    <div class="row">
+      <span>$<%= product.price %></span>
+      <%= form_with(url: cart_add_path) do |f| %>
+        <%= f.hidden_field :id, value: product.id %>
+        <%= f.submit 'Order', class: 'btn' %>
+      <% end %>
+    </div>
+  </div>
+</div>
