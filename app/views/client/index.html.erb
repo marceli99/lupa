@@ -1,108 +1,29 @@
-<header>
-  Lupa
-</header>
 <main>
-  <!-- <h1>Resteuracja test</h1> -->
-  <!-- <hr>
-  <article>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In neque erat, aliquam nec accumsan ut, iaculis vitae ligula. Maecenas eget ligula at purus rutrum congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis rutrum nisl vel tortor condimentum eleifend. Cras rutrum sapien a tincidunt auctor. Vestibulum a lectus viverra, semper leo eu, suscipit nisi. Mauris erat lorem, efficitur ac tempus et, vestibulum sed mi. Sed suscipit risus lorem, at tincidunt nunc maximus ac. Sed tristique ut elit eu tempor. Aliquam et pellentesque quam. Cras est magna, finibus in eros vel, tincidunt imperdiet massa. Integer id euismod est. Pellentesque quis molestie dui. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Suspendisse lectus sapien, fringilla vel egestas in, vulputate vel nibh.
-  </article> -->
-  <h2>Dania główne</h2>
-  <hr class="light">
-  <div class="thing">
-    <div class="thing-block">
-      <div class="thing-title">
-        Pizza hawajska
-      </div>
-      <div class="thing-description">
-        Sos pomidorowy, ser, ananas, szynka
-      </div>
-    </div>
-    <div class="thing-add">
-      <i class="add material-icons">add</i>
-    </div>
+  <header>
+    <%= image_tag 'cuisine.jpg' %>
+    Lupa
+  </header>
+  <div class="categories">
+    <ul id="categories_list">
+      <% @categories.each do |category| %>
+       <li><%= category.name %></li>
+      <% end %>
+    </ul>
   </div>
-  <div class="thing">
-    <div class="thing-block">
-      <div class="thing-title">
-        Pizza hawajska
+  <div id="products" class="dishes">
+    <% @categories.each do |category| %>
+      <div id="<%= category.name.delete(' ') %>" class="dish_category">
+        <h2><%= category.name %></h2>
+        <div class="dishes-list">
+          <% category.products.each do |product| %>
+            <%= render 'product', product: product %>
+          <% end %>
+        </div>
       </div>
-      <div class="thing-description">
-        Sos pomidorowy, ser, ananas, szynka
-      </div>
-    </div>
-    <div class="thing-add">
-      <i class="add material-icons">add</i>
-    </div>
-  </div>
-  <div class="thing">
-    <div class="thing-block">
-      <div class="thing-title">
-        Pizza hawajska
-      </div>
-      <div class="thing-description">
-        Sos pomidorowy, ser, ananas, szynka
-      </div>
-    </div>
-    <div class="thing-add">
-      <i class="add material-icons">add</i>
-    </div>
-  </div>
-  <h2>Pizza</h2>
-  <hr class="light">
-  <div class="thing">
-    <div class="thing-block">
-      <div class="thing-title">
-        Pizza hawajska
-      </div>
-      <div class="thing-description">
-        Sos pomidorowy, ser, ananas, szynka
-      </div>
-    </div>
-    <div class="thing-add">
-      <i class="add material-icons">add</i>
-    </div>
-  </div>
-  <div class="thing">
-    <div class="thing-block">
-      <div class="thing-title">
-        Pizza hawajska
-      </div>
-      <div class="thing-description">
-        Sos pomidorowy, ser, ananas, szynka
-      </div>
-    </div>
-    <div class="thing-add">
-      <i class="add material-icons">add</i>
-    </div>
-  </div>
-  <div class="thing">
-    <div class="thing-block">
-      <div class="thing-title">
-        Pizza hawajska
-      </div>
-      <div class="thing-description">
-        Sos pomidorowy, ser, ananas, szynka
-      </div>
-    </div>
-    <div class="thing-add">
-      <i class="add material-icons">add</i>
-    </div>
-  </div>
-  <div class="thing">
-    <div class="thing-block">
-      <div class="thing-title">
-        Pizza hawajska
-      </div>
-      <div class="thing-description">
-        Sos pomidorowy, ser, ananas, szynka
-      </div>
-    </div>
-    <div class="thing-add">
-      <i class="add material-icons">add</i>
-    </div>
+    <% end %>
   </div>
 </main>
-<footer>
-  Lupa 2022
-</footer>
+<aside>
+  <%= render 'cart/cart' %>
+</aside>
+

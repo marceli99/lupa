@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/rzilient-club/trestle-active_storage.git
+  revision: 63288720c4b46cd423785494f5ea9b0b238209cb
+  specs:
+    trestle-active_storage (3.0.1)
+      rails (>= 5.2)
+      trestle (~> 0.9.0, >= 0.9.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -103,6 +111,12 @@ GEM
       activesupport (>= 5.0)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
+    image_processing (1.12.2)
+      mini_magick (>= 4.9.5, < 5)
+      ruby-vips (>= 2.0.17, < 3)
+    importmap-rails (1.1.5)
+      actionpack (>= 6.0.0)
+      railties (>= 6.0.0)
     io-console (0.5.11)
     irb (1.4.1)
       reline (>= 0.3.0)
@@ -131,6 +145,7 @@ GEM
     marcel (1.0.2)
     matrix (0.4.2)
     method_source (1.0.0)
+    mini_magick (4.11.0)
     mini_mime (1.1.2)
     minitest (5.16.3)
     msgpack (1.5.6)
@@ -197,6 +212,8 @@ GEM
       actionpack (>= 5.0)
       railties (>= 5.0)
     rexml (3.2.5)
+    ruby-vips (2.1.4)
+      ffi (~> 1.12)
     rubyzip (2.3.2)
     sassc (2.4.0)
       ffi (~> 1.9)
@@ -266,8 +283,11 @@ DEPENDENCIES
   cssbundling-rails
   debug
   devise
+  image_processing (~> 1.2)
+  importmap-rails (~> 1.1)
   jbuilder
   jsbundling-rails
+  mini_magick (~> 4.5, >= 4.5.1)
   paranoia (~> 2.2)
   pg (~> 1.1)
   puma (~> 5.0)
@@ -278,6 +298,7 @@ DEPENDENCIES
   sprockets-rails
   stimulus-rails
   trestle
+  trestle-active_storage!
   trestle-auth
   turbo-rails
   tzinfo-data

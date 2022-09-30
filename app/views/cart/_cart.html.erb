@@ -1,0 +1,22 @@
+<%= turbo_frame_tag 'cart' do %>
+  <div class="cart-title">
+    <h5><%= @cart.orderables.count %> items inside</h5>
+    <h2>Your order</h2>
+  </div>
+  <div class="cart-products">
+    <% @cart.orderables.sort_by { |o| o.created_at }.each do |orderable| %>
+      <%= render 'cart/cart_product', orderable: orderable, product: orderable.product, quantity: orderable.quantity %>
+    <% end %>
+  </div>
+  <div class="space-filler"></div>
+
+  <div class="cart-footer">
+    <div class="cart-price">
+      <span><%= I18n.t('total') %>:</span>
+      <span><%= format_price(@cart.total) %></span>
+    </div>
+    <div class="checkout-btn">
+      <%= button_to 'Checkout', cart_checkout_path, class: 'btn' %>
+    </div>
+  </div>
+<% end %>

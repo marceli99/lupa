@@ -1,0 +1,35 @@
+<div id="<%= "cart-#{product.id}" %>">
+  <div class="content">
+    <div class="image">
+      <% if product.image.attached? %>
+        <%= image_tag product.image %>
+      <% else %>
+        <%= image_tag('missing_waffle.jpg') %>
+      <% end %>
+    </div>
+    <div class="description">
+      <div class="details">
+        <span class="category"><%= product.category.name %></span>
+        <span class="price">$<%= product.price %></span>
+      </div>
+      <p><%= product.name %></p>
+    </div>
+  </div>
+  <hr class="thin">
+  <div class="actions">
+    <div class="count">
+      <%= button_to cart_decrease_count_path(id: orderable.id), method: :post do %>
+        <%= image_tag 'minus.svg' %>
+      <% end %>
+      <span><%= orderable.quantity %></span>
+      <%= button_to cart_increase_count_path(id: orderable.id), method: :post do %>
+        <%= image_tag 'plus.svg' %>
+      <% end %>
+    </div>
+    <%= form_with(url: cart_remove_url) do |f| %>
+      <%= f.hidden_field :id, value: orderable.id %>
+      <%= f.submit 'Remove', class: 'btn' %>
+    <% end %>
+  </div>
+  <hr>
+</div>
