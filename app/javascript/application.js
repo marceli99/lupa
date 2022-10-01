@@ -1,7 +1,14 @@
 import jquery from 'jquery'
-import "@hotwired/turbo-rails"
 
 window.$ = jquery;
+window.jQuery = jquery;
+
+import select2 from 'select2';
+
+select2($);
+
+import "@hotwired/turbo-rails"
+import './controllers/index.js'
 
 
 $(document).ready(() => {

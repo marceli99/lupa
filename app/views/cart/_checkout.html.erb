@@ -1,57 +1,124 @@
-<%= turbo_frame_tag 'cart' do %>
+<%= turbo_frame_tag 'cart', "data-frame-target": "frame", target: '_top' do %>
   <div class="cart-title">
     <h5><%= @cart.orderables.count %> items inside</h5>
     <h2>Checkout</h2>
   </div>
-  <%= form_with url: payment_path, class: 'cart_form' do |f| %>
-    <div class="cart_header">
-      <h1 class="title">Dane kontaktowe</h1>
-      <hr>
+  <%= form_with url: orders_path, id: 'checkout_form', class: 'cart_form' do |f| %>
+    <%= f.hidden_field :cart_id, value: @cart.id %>
+    <div class="scrollable">
+      <div class="form_content">
+        <div class="cart_header">
+          <h1 class="title"><%= I18n.t('contact_info') %></h1>
+          <hr>
+        </div>
+        <div class="field">
+          <%= f.text_field :customer_name, id: 'checkout_name', class: 'input', 'data-action': 'keyup->frame#saveInput', required: true %>
+          <label class="label" for="checkout_name"><%= I18n.t('full_name') %></label>
+          <div class="underline"></div>
+        </div>
+        <div class="field">
+          <%= f.telephone_field :customer_phone, id: 'checkout_phone', class: 'input', 'data-action': 'keyup->frame#saveInput', required: true %>
+          <label class="label" for="checkout_phone"><%= I18n.t('phone_number') %></label>
+          <div class="underline"></div>
+        </div>
+        <div class="field">
+          <%= f.text_field :customer_email, id: 'checkout_email', class: 'input', 'data-action': 'keyup->frame#saveInput', required: true %>
+          <label class="label" for="checkout_email"><%= I18n.t('email') %></label>
+          <div class="underline"></div>
+        </div>
+        <div class="fields">
+          <div class="divided_field">
+            <div class="cart_header">
+              <h1 class="title"><%= I18n.t('delivery_method') %></h1>
+              <hr>
+            </div>
+            <div class="radio">
+              <label for="delivery" class="label">
+                <%= I18n.t('delivery') %>
+                <input id="delivery" type="radio" checked="checked" name="delivery_method" value="delivery" data-action="click->frame#toggleDelivery">
+                <span class="checkmark"></span>
+              </label>
+              <label for="self_pickup" class="label">
+                <%= I18n.t('self_pickup') %>
+                <input id="self_pickup" type="radio" name="delivery_method" value="self_pickup" data-action="click->frame#toggleDelivery">
+                <span class="checkmark"></span>
+              </label>
+            </div>
+          </div>
+          <hr class="vertical">
+          <div class="divided_field">
+            <div class="cart_header">
+              <h1 class="title"><%= I18n.t('order_for') %></h1>
+              <hr>
+            </div>
+            <div class="field">
+              <select id="order_for_select" name="delivery_time" style="width: 100%">
+                <option value="asap"><%= I18n.t('as_soon_as_possible') %></option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div id="delivery_details" class="delivery_details hidden">
+          <div class="cart_header">
+            <h1 class="title"><%= I18n.t('delivery_address') %></h1>
+            <hr>
+          </div>
+          <div class="inline">
+            <div class="field street">
+              <input id="delivery_street" class="input" type="text" name="delivery_street" data-action="keyup->frame#saveInput" required>
+              <label class="label" for="delivery_street"><%= I18n.t('delivery_street') %></label>
+              <div class="underline"></div>
+            </div>
+
+            <div class="field number">
+              <input id="delivery_house" class="input" type="text" name="delivery_house_number" data-action="keyup->frame#saveInput" required>
+              <label class="label" for="delivery_house"><%= I18n.t('delivery_house_number') %></label>
+              <div class="underline"></div>
+            </div>
+          </div>
+          <div class="field">
+            <input id="delivery_city" class="input" type="text" name="delivery_city" data-action="keyup->frame#saveInput" required>
+            <label class="label" for="delivery_city"><%= I18n.t('delivery_city') %></label>
+            <div class="underline"></div>
+          </div>
+        </div>
+        <div class="cart_header">
+          <h1 class="title"><%= I18n.t('payment_method') %></h1>
+          <hr>
+        </div>
+        <div class="radio">
+          <label for="blik_payment" class="label">
+            <%= I18n.t('blik') %>
+            <input id="blik_payment" type="radio" checked="checked" name="payment_method" value="blik_payment" data-action="click->frame#saveInput">
+            <span class="checkmark"></span>
+          </label>
+          <label for="card_payment" class="label">
+            <%= I18n.t('card') %>
+            <input id="card_payment" type="radio" name="payment_method" value="card_payment" data-action="click->frame#saveInput">
+            <span class="checkmark"></span>
+          </label>
+          <label for="cash_payment" class="label">
+            <%= I18n.t('cash') %>
+            <input id="cash_payment" type="radio" name="payment_method" value="cash_payment" data-action="click->frame#saveInput">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+      </div>
     </div>
-    <div class="field">
-      <input class="input" type="text" name="input_email" required>
-      <label class="label"><%= I18n.t('full_name') %></label>
-      <div class="underline"></div>
-    </div>
-    <div class="field">
-      <input class="input" type="text" name="input_email" required>
-      <label class="label"><%= I18n.t('phone_number') %></label>
-      <div class="underline"></div>
-    </div>
-    <div class="field">
-      <input class="input" type="text" name="input_email" required>
-      <label class="label"><%= I18n.t('email') %></label>
-      <div class="underline"></div>
-    </div>
-    <div class="cart_header">
-      <h1 class="title"><%= I18n.t('delivery_method') %></h1>
-      <hr>
-    </div>
-    <div class="radio">
-      <label for="delivery" class="label">
-        <%= I18n.t('delivery') %>
-        <input id="delivery" type="radio" checked="checked" name="delivery_method" value="delivery">
-        <span class="checkmark"></span>
-      </label>
-      <label for="self_pickup" class="label">
-        <%= I18n.t('self_pickup') %>
-        <input id="self_pickup" type="radio" name="delivery_method" value="self_pickup">
-        <span class="checkmark"></span>
-      </label>
-    </div>
-    <div class="cart_header">
-      <h1 class="title"><%= I18n.t('order_for') %></h1>
-      <hr>
-    </div>
-  <% end %>
   <div class="space-filler"></div>
   <div class="cart-footer">
     <div class="cart-price">
       <span><%= I18n.t('total') %>:</span>
       <span><%= format_price(@cart.total) %></span>
     </div>
-    <div class="checkout-btn">
-      <%= button_to 'Back to cart', cart_show_path, class: 'btn' %>
+    <div class="split-btn">
+      <div class="checkout-btn">
+        <%= link_to "<button class='btn' type='button'>Back to cart</button>".html_safe, cart_show_path, "data-turbo-method": :post %>
+      </div>
+      <div class="checkout-btn">
+        <%= submit_tag 'Order', class: 'btn' %>
+      </div>
     </div>
   </div>
+  <% end %>
 <% end %>

@@ -46,3 +46,5 @@ products.each do |product|
   product.save(validate: false)
   product.image.attach(io: File.open(Rails.root.join('app/assets/images/vegan-pizza.jpg')), filename: 'vegan-pizza.jpg')
 end
+
+puts 'Seeded database!'

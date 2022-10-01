@@ -1,4 +1,4 @@
-<%= turbo_frame_tag 'cart' do %>
+<%= turbo_frame_tag 'cart', "data-frame-target": "frame" do %>
   <div class="cart-title">
     <h5><%= @cart.orderables.count %> items inside</h5>
     <h2>Your order</h2>
@@ -15,8 +15,12 @@
       <span><%= I18n.t('total') %>:</span>
       <span><%= format_price(@cart.total) %></span>
     </div>
-    <div class="checkout-btn">
-      <%= button_to 'Checkout', cart_checkout_path, class: 'btn' %>
+    <div class="checkout-btn <%= @cart.orderables.any? ? '' : 'disabled' %>">
+      <% if @cart.orderables.any? %>
+        <%= button_to 'Checkout', cart_checkout_path, class: 'btn' %>
+      <% else %>
+        <%= button_to 'Checkout', root_path, class: 'btn disabled' %>
+      <% end %>
     </div>
   </div>
 <% end %>

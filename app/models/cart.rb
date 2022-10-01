@@ -1,6 +1,6 @@
 class Cart < ApplicationRecord
   include ActionView::Helpers::NumberHelper
-  has_many :orderables
+  has_many :orderables, dependent: :destroy
   has_many :products, through: :orderables
 
   def total
