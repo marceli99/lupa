@@ -1,0 +1,25 @@
+<div data-controller="order" data-order-id="<%= @order.id %>" data-order-status="<%= @order.status %>">
+  <div class="finished-order">
+    <% case @order.status %>
+    <% when 'waiting_for_payment' %>
+      <p id="status-info" data-payment="true">
+        Your order has been placed! Please complete the payment.
+      </p>
+      <%= render partial: 'partials/loader' %>
+    <% when 'waiting_for_approval' %>
+      <p id="status-info">
+        Please wait for the restaurant to accept your order.
+      </p>
+      <%= render partial: 'partials/loader' %>
+    <% when 'rejected' %>
+      <p>
+        Payment for the order has been rejected.
+      </p>
+      <% when '' %>
+    <% else %>
+      <p>
+        Error: Unknown order status.
+      </p>
+    <% end %>
+  </div>
+</div>

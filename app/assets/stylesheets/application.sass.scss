@@ -1,9 +1,11 @@
+@import 'select2.min.css';
 @import 'settings.sass.scss';
 @import 'cart.sass.scss';
+@import "loading.sass.scss";
 
 $border-color: #dadada;
 
-body {
+.shop-body {
   height: 0;
   margin: 0 auto;
   font-family: "Open Sans", sans-serif;
@@ -12,15 +14,16 @@ body {
   min-height: 100vh;
   overflow: hidden;
   color: #333;
-}
 
-main {
-  overflow: scroll;
+  main {
+    overflow-y: scroll;
+    width: 80%;
+  }
 }
 
 aside {
   border-left: 1px solid #d0d0d0;
-  width: 100rem;
+  width: 20%;
   -webkit-box-shadow: -2px 0px 60px 0px rgba(66, 68, 90, 0.3);
   -moz-box-shadow: -2px 0px 60px 0px rgba(66, 68, 90, 0.3);
   box-shadow: -2px 0px 60px 0px rgba(66, 68, 90, 0.3);
@@ -124,7 +127,7 @@ aside {
       padding: 0.8em 1.4em;
 
       &.selected {
-        background-color: #FE9018;
+        background-color: $theme-color;
         color: white;
       }
 
@@ -152,6 +155,12 @@ aside {
   flex: 1;
 }
 
+.finished-order {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .cart-footer {
   bottom: 0;
 
@@ -172,13 +181,49 @@ aside {
     min-height: 4em;
     height: 4em;
     border-top: 1px solid $border-color;
-    background: #FE9018;
+    background: $theme-color;
+
+    .btn {
+      border-radius: 0;
+    }
+
+    &.disabled {
+      background: lightgray;
+      pointer-events: none;
+
+      .btn {
+        background: lightgray;
+      }
+
+      &:hover {
+        cursor: initial;
+        background: lightgray;
+      }
+    }
+  }
+
+  .split-btn {
+    display: flex;
+    gap: 1px;
+    min-height: 4em;
+
+    .checkout-btn {
+      font-size: 0.8em;
+      min-height: initial;
+      height: initial;
+
+      a {
+        text-decoration: none;
+        text-align: center;
+      }
+    }
   }
 
   form {
     width: 100%;
     height: 100%;
   }
+
   .btn {
     font-size: 1.2em;
     width: 100%;
@@ -198,7 +243,7 @@ aside {
 .cart-products {
   display: flex;
   flex-direction: column;
-  overflow: scroll;
+  overflow-y: scroll;
 
   .content {
     display: flex;
@@ -305,7 +350,7 @@ aside {
 }
 
 .btn {
-  background-color: #FE9018;
+  background-color: $theme-color;
   color: white;
   padding: 0.5em 1em;
   font-size: 0.75em;

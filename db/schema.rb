@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema[7.0].define(version: 2022_09_25_163836) do
   # These are extensions that must be enabled in order to support this database
+  enable_extension "pgcrypto"
   enable_extension "plpgsql"
 
   create_table "active_storage_attachments", force: :cascade do |t|
@@ -63,31 +64,32 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_25_163836) do
     t.index ["product_id"], name: "index_orderables_on_product_id"
   end
 
-  create_table "orders", force: :cascade do |t|
-    t.boolean "delivery"
-    t.text "delivery_address"
+  create_table "orders", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.text "customer_name", null: false
+    t.text "customer_phone", null: false
+    t.text "customer_email", null: false
+    t.text "delivery_method", null: false
+    t.text "delivery_time", null: false
+    t.text "delivery_street"
+    t.text "delivery_house_number"
+    t.text "delivery_city"
+    t.text "payment_method", null: false
+    t.json "products", null: false
+    t.integer "status", default: 0
+    t.datetime "estimated_delivery_date"
+    t.text "rejection_reason"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "product_orders", force: :cascade do |t|
-    t.bigint "order_id", null: false
-    t.bigint "product_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "count"
-    t.index ["order_id"], name: "index_product_orders_on_order_id"
-    t.index ["product_id"], name: "index_product_orders_on_product_id"
   end
 
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.string "description"
     t.bigint "category_id", null: false
-    t.float "price"
+    t.decimal "price", precision: 7, scale: 2
+    t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.datetime "deleted_at"
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["deleted_at"], name: "index_products_on_deleted_at"
   end
@@ -108,7 +110,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_25_163836) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "orderables", "carts"
   add_foreign_key "orderables", "products"
-  add_foreign_key "product_orders", "orders"
-  add_foreign_key "product_orders", "products"
   add_foreign_key "products", "categories"
 end
