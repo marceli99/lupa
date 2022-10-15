@@ -5,11 +5,15 @@ Trestle.resource(:orders) do
 
   # Customize the table columns shown on the index view.
   #
-  # table do
-  #   column :name
-  #   column :created_at, align: :center
-  #   actions
-  # end
+  table do
+    column 'Customer', :customer_name
+    column 'Phone', :customer_phone
+    column 'Email', :customer_email
+    column 'Delivery Address', :full_address
+    column 'Payment method', :payment_method
+    column 'Products', :formatted_product_names
+    column 'Status', :status
+  end
 
   # Customize the form fields shown on the new/edit views.
   #

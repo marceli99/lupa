@@ -7,7 +7,9 @@ import {application} from "./application"
 import ApplicationController from "./application_controller"
 import TurboFrameController from './turbo-frame_controller'
 import OrderController from './order_controller'
+import OrdersTableController from './orders_table_controller'
 
 application.register('application', ApplicationController)
 application.register('frame', TurboFrameController)
 application.register('order', OrderController)
+application.register('orders_table', OrdersTableController)

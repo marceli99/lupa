@@ -1,0 +1,57 @@
+<br>
+<div class="orders-table" data-controller="orders_table">
+  <% categories = %w[waiting_for_approval in_preparation in_delivery done] %>
+  <% categories.each do |category| %>
+    <div class="category">
+      <div class="header">
+        <h3><%= category.titleize.gsub('_', ' ') %></h3>
+      </div>
+      <div id="dropzone_<%= category %>" class="orders dropzone" data-status="<%= category %>">
+        <% @orders.send(category).each do |order| %>
+          <%= render partial: 'partials/table_order', locals: { order: order } %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
+  <!--  <div class="category">-->
+  <!--    <div class="header">-->
+  <!--      <h3>New</h3>-->
+  <!--    </div>-->
+  <!--    <div id="dropzone_waiting_for_approval" class="orders dropzone" data-status="waiting_for_approval">-->
+  <%# @orders.waiting_for_approval.each do |order| %>
+  <!--        <h2 id="<%#= order.id %>"><%#= order.formatted_product_names %></h2>-->
+  <%# end %>
+  <!--    </div>-->
+  <!--  </div>-->
+  <!--  <div class="category">-->
+  <!--    <div class="header">-->
+  <!--      <h3>In preparation</h3>-->
+  <!--    </div>-->
+  <!--    <div id="dropzone_in_preparation" class="orders dropzone" data-status="in_preparation">-->
+  <%# @orders.in_preparation.each do |order| %>
+  <!--        <h2 id="<%#= order.id %>"><%#= order.formatted_product_names %></h2>-->
+  <%# end %>
+  <!--    </div>-->
+  <!--  </div>-->
+  <!--  <div class="category">-->
+  <!--    <div class="header">-->
+  <!--      <h3>In delivery</h3>-->
+  <!--    </div>-->
+  <!--    <div id="dropzone_in_delivery" class="orders dropzone" data-status="in_delivery">-->
+  <%# @orders.in_delivery.each do |order| %>
+  <!--        <h2 id="<%#= order.id %>"><%#= order.formatted_product_names %></h2>-->
+  <%# end %>
+  <!--    </div>-->
+  <!--  </div>-->
+  <!--  <div class="category">-->
+  <!--    <div class="header">-->
+  <!--      <h3>Done</h3>-->
+  <!--    </div>-->
+  <!--    <div id="dropzone_done" class="orders dropzone" data-status="done">-->
+  <%# @orders.done.each do |order| %>
+  <!--        <h2 id="<%#= order.id %>"><%#= order.formatted_product_names %></h2>-->
+  <%# end %>
+  <!--    </div>-->
+  <!--  </div>-->
+</div>
