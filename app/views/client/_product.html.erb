@@ -7,13 +7,13 @@
     <% end %>
   </div>
   <div class="details">
-    <span><%= product.name %></span>
+    <span class="dish__name"><%= product.name %></span>
     <span class="description"><%= product.description %></span>
     <div class="row">
       <span>$<%= product.price %></span>
       <%= form_with(url: cart_add_path) do |f| %>
         <%= f.hidden_field :id, value: product.id %>
-        <%= f.submit 'Order', class: 'btn' %>
+        <%= f.submit 'Order', class: 'btn', id: 'product_order_' + product.id.to_s %>
       <% end %>
     </div>
   </div>

@@ -1,5 +1,5 @@
 {
-  "name": "app",
+  "name": "lupa",
   "private": "true",
   "dependencies": {
     "@hotwired/stimulus": "^3.1.0",
@@ -15,6 +15,23 @@
     "build:css": "sass ./app/assets/stylesheets/application.sass.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules"
   },
   "devDependencies": {
-    "cypress": "^10.10.0"
-  }
+    "cypress": "^10.11.0"
+  },
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "version": "1.0.0",
+  "main": "cypress.config.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marceli99/lupa.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marceli99/lupa/issues"
+  },
+  "homepage": "https://github.com/marceli99/lupa#readme"
 }
