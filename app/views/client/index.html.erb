@@ -8,6 +8,7 @@
       <% @categories.each do |category| %>
         <li><%= category.name %></li>
       <% end %>
+      <span class="categories__shadow"></span>
     </ul>
   </div>
   <div id="products" class="dishes">
@@ -23,6 +24,8 @@
     <% end %>
   </div>
 </main>
+<input type="checkbox" class="hidden aside_open" id="aside_open">
+<label for="aside_open" class="aside_open_label"></label>
 <aside data-controller="frame">
   <%= render 'cart/cart' %>
 </aside>

@@ -1,8 +1,7 @@
 @import 'select2.min.css';
 @import 'settings.sass.scss';
 @import 'cart.sass.scss';
-@import 'loading.sass.scss';
-@import 'dragula.min.css';
+@import "loading.sass.scss";
 
 $border-color: #dadada;
 
@@ -46,7 +45,7 @@ aside {
 
 .dishes {
   background-color: #F6F6F6;
-  padding: 1em 8em;
+  padding: 1em clamp(20px, 20vw, 40px);
 
   h2 {
     margin: 0 0 0.5em 0;
@@ -70,6 +69,11 @@ aside {
       -moz-box-shadow: 0 0 1px 0 rgba(66, 68, 90, 1);
       //box-shadow: 0 0 1px 0 rgba(66, 68, 90, 1);
       box-shadow: 0 0 10px 1px rgba(66, 68, 90, 0.1);
+
+      .dish__name{
+        font-size: clamp(16px, 8vw, 24px);
+        line-height: 1.1;
+      }
 
       .image {
         max-height: 10em;
@@ -117,6 +121,7 @@ aside {
   position: sticky;
   top: 0;
 
+
   ul {
     display: flex;
     list-style-type: none;
@@ -124,8 +129,20 @@ aside {
     margin: 0;
     padding: 0 4em;
 
+    overflow-x: scroll;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar{
+      display: none;
+    }
+
+
     li {
       padding: 0.8em 1.4em;
+
+      &:first-child{
+        min-width: 100px;
+      }
 
       &.selected {
         background-color: $theme-color;
@@ -382,9 +399,9 @@ header {
   width: 100%;
   color: white;
 
-  text-shadow: 3px 0px 7px rgba(81, 67, 21, 0.8),
-  -3px 0px 7px rgba(81, 67, 21, 0.8),
-  0px 4px 7px rgba(81, 67, 21, 0.8);
+  text-shadow: 3px 0px 7px rgba(81,67,21,0.8),
+  -3px 0px 7px rgba(81,67,21,0.8),
+  0px 4px 7px rgba(81,67,21,0.8);
 
   img {
     position: absolute;
@@ -459,59 +476,103 @@ h2 {
   margin: 0;
 }
 
-.orders-table {
-  margin: 0 auto;
-  display: flex;
-  gap: 2em;
+.aside_open_label{
+  display: none;
+}
 
-  .category {
-    display: flex;
-    flex-direction: column;
-    background-color: #F4F5F7;
-    border-radius: 8px;
-    width: 18em;
-    height: 26em;
-    text-align: center;
-    border: 1px solid lightgray;
+.hidden{
+  display: none;
+}
 
-    .header {
-      border-bottom: 1px solid lightgray;
+
+@media screen and (max-width: 1700px) {
+  aside{
+    position: fixed;
+    right: -300px;
+    bottom: 0;
+    transition: all .3s ease;
+    min-width: 300px;
+  }
+
+  .shop-body main{
+    width: 100%;
+  }
+
+  .aside_open_label{
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-color: yellow;
+    cursor: pointer;
+    position: fixed;
+    right: 5%;
+    bottom: 5%;
+    z-index: 10;
+    transition: all .3s ease;
+    border-radius: 6px;
+  }
+
+  .aside_open:checked {
+    & ~ .aside_open_label {
+      right: 25%;
+      transition: all .3s ease;
     }
 
-    .orders {
-      flex: 1;
-      overflow-y: scroll;
-      padding: 0.2em;
-
-      &.drop-active {
-        background-color: #FE9018;
-      }
-
-      .order {
-        background-color: #ffffff;
-        display: flex;
-        border-radius: 6px;
-        margin: 2px 0;
-        -webkit-box-shadow: 0px 1px 3px 0px #868686;
-        -moz-box-shadow: 0px 1px 3px 0px #868686;
-        box-shadow: 0px 1px 3px 0px #868686;
-
-        .ribbon {
-          width: 2em;
-          background-color: #6ED54B;
-          border-top-left-radius: 4px;
-          border-bottom-left-radius: 4px;
-        }
-
-        .products_details {
-          padding: 0.75em;
-
-          h3 {
-            margin: 0;
-            text-align: left;
-          }
-        }
-      }
+    & ~ aside{
+      right: 0;
+      background-color: white;
+      transition: all .3s ease;
     }
+  }
+
+}
+
+@media screen and (max-width: 1300px) {
+  .aside_open:checked {
+    & ~ .aside_open_label {
+      right: 320px;
+      transition: all .3s ease;
+    }
+  }
+}
+
+
+@media screen and (max-width: 768px){
+
+  .dishes .dishes-list .dish{
+    max-width: 47%;
+  }
+
+  .categories {
+    position: relative;
+    .categories__shadow{
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 40px;
+      background: linear-gradient(to right, transparent, rgba(#fff , 1));
+    }
+
+    ul {
+
+      justify-content: flex-start;
+      padding-left: 0;
+
+
+
+      li{
+        &:first-child{
+          padding-left: 10px;
+        }
+      }
+
+    }
+  }
+}
+
+@media screen and (max-width: 500px){
+  .dishes .dishes-list .dish{
+    max-width: 100%;
   }
 }
