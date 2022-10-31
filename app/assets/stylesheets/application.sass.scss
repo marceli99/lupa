@@ -1,9 +1,67 @@
 @import 'select2.min.css';
 @import 'settings.sass.scss';
 @import 'cart.sass.scss';
-@import "loading.sass.scss";
+@import 'loading.sass.scss';
+@import 'dragula.min.css';
 
 $border-color: #dadada;
+
+.orders-table {
+  margin: 0 auto;
+  display: flex;
+  gap: 2em;
+
+  .category {
+    display: flex;
+    flex-direction: column;
+    background-color: #F4F5F7;
+    border-radius: 8px;
+    width: 18em;
+    height: 26em;
+    text-align: center;
+    border: 1px solid lightgray;
+
+    .header {
+      border-bottom: 1px solid lightgray;
+    }
+
+    .orders {
+      flex: 1;
+      overflow-y: scroll;
+      padding: 0.2em;
+
+      &.drop-active {
+        background-color: #FE9018;
+      }
+
+      .order {
+        background-color: #ffffff;
+        display: flex;
+        border-radius: 6px;
+        margin: 2px 0;
+        -webkit-box-shadow: 0px 1px 3px 0px #868686;
+        -moz-box-shadow: 0px 1px 3px 0px #868686;
+        box-shadow: 0px 1px 3px 0px #868686;
+
+        .ribbon {
+          width: 2em;
+          background-color: #6ED54B;
+          border-top-left-radius: 4px;
+          border-bottom-left-radius: 4px;
+        }
+
+        .products_details {
+          padding: 0.75em;
+
+          h3 {
+            margin: 0;
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+}
 
 .shop-body {
   height: 0;
