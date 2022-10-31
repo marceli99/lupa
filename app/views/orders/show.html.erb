@@ -13,9 +13,17 @@
       <%= render partial: 'partials/loader' %>
     <% when 'rejected' %>
       <p>
-        Payment for the order has been rejected.
+        Payment for the order has been rejected. Reason:
+        <%= @order.rejection_reason %>
       </p>
-      <% when '' %>
+    <% when 'in_delivery' %>
+      <p>
+        Your food is on the way!
+      </p>
+    <% when 'done' %>
+      <p>
+        Your order has arrived. Bon Appétit!
+      </p>
     <% else %>
       <p>
         Error: Unknown order status.
