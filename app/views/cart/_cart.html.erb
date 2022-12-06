@@ -15,8 +15,11 @@
       <span><%= I18n.t('total') %>:</span>
       <span><%= format_price(@cart.total) %></span>
     </div>
-    <div class="checkout-btn <%= @cart.orderables.any? ? '' : 'disabled' %>">
-      <% if @cart.orderables.any? %>
+    <% is_open = OpenHour.is_open? %>
+    <div class="checkout-btn <%= @cart.orderables.any? && is_open ? '' : 'disabled' %>">
+      <% if !is_open %>
+        <%= button_to 'Restaurant closed', root_path, class: 'btn disabled' %>
+    <% elsif @cart.orderables.any? %>
         <%= button_to 'Checkout', cart_checkout_path, class: 'btn' %>
       <% else %>
         <%= button_to 'Checkout', root_path, class: 'btn disabled' %>

@@ -23,31 +23,25 @@ export default class extends Controller {
                 $('#delivery_details').toggleClass('hidden');
             }
 
-            let timeIntervals = this.getTimeIntervals(moment().add(3, 'hours'));
-            let select = $('#order_for_select')
-            select.select2({
-                data: timeIntervals.map((interval, index) => {
-                    return {id: index, text: interval.format('LT')}
-                }),
+            $('#order_for_select').select2({
                 minimumResultsForSearch: -1,
             });
-
-            select.on('select2:select', e => this.saveInput(e));
-            let hourData = localStorage.getItem('hour');
-            if (hourData !== null && hourData < timeIntervals.length) {
-                select.val(hourData).trigger('change');
-            }
         }
     }
 
     toggleDelivery(e) {
         localStorage.setItem(e.target.name, e.target.value);
-        let element = $('#delivery_details');
+        let deliveryDetails = $('#delivery_details');
 
-        element.removeClass('hidden');
+        deliveryDetails.removeClass('hidden');
+
         if (e.target.value !== 'delivery') {
-            element.addClass('hidden');
+            deliveryDetails.addClass('hidden');
         }
+
+        $("#delivery_street").prop('required', e.target.value === 'delivery')
+        $("#delivery_city").prop('required', e.target.value === 'delivery')
+        $("#delivery_house").prop('required', e.target.value === 'delivery')
     }
 
     saveInput(e) {

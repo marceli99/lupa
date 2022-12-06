@@ -1,6 +1,6 @@
 Trestle.resource(:products) do
   menu do
-    item :products, icon: "fa fa-star"
+    item :products, icon: "fa fa-utensils"
   end
 
   active_storage_fields do

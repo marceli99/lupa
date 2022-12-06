@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  day_of_week: 1
+  open_time: 2022-12-04 16:03:22
+  close_time: 2022-12-04 16:03:22
+
+two:
+  day_of_week: 1
+  open_time: 2022-12-04 16:03:22
+  close_time: 2022-12-04 16:03:22

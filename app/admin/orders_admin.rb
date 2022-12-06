@@ -3,8 +3,6 @@ Trestle.resource(:orders) do
     item :orders, icon: "fa fa-star"
   end
 
-  # Customize the table columns shown on the index view.
-  #
   table do
     column 'Customer', :customer_name
     column 'Phone', :customer_phone
@@ -15,26 +13,31 @@ Trestle.resource(:orders) do
     column 'Status', :status
   end
 
-  # Customize the form fields shown on the new/edit views.
-  #
   form do |order|
-    # text_field :name
-    collection_select :product_ids, Product.all, :id, :name, { label: "Products" }, { multiple: true }
+    tab :order do
+      text_field :customer_name
+      text_field :customer_phone
+      text_field :customer_email
+      payment_methods = Order::PAYMENT_METHODS.map { |payment_method| [payment_method.humanize, payment_method] }
+      select :payment_method, payment_methods
+      text_field :delivery_city
+      text_field :delivery_street
+      text_field :delivery_house_number
+    end
 
-    row do
-      col { datetime_field :updated_at }
-      col { datetime_field :created_at }
+    tab :products, badge: order.products&.size || 0 do
+      table order.products.try(:map) { |product_data| JsonObject.new(product_data) } || [] do
+        column :id
+        column :name
+        column :description
+        column :quantity, align: :center
+        column :price, align: :center
+        actions do |a|
+          link_to 'Remove', product_orders_admin_path(self.form.object.id, product_id: a.instance.id), method: :delete
+        end
+      end
+
+      concat admin_link_to("New Product", admin: :product_orders, action: :new, params: { order_id: order }, class: "btn btn-success")
     end
   end
-
-  # By default, all parameters passed to the update and create actions will be
-  # permitted. If you do not have full trust in your users, you should explicitly
-  # define the list of permitted parameters.
-  #
-  # For further information, see the Rails documentation on Strong Parameters:
-  #   http://guides.rubyonrails.org/action_controller_overview.html#strong-parameters
-  #
-  # params do |params|
-  #   params.require(:order).permit(:name, ...)
-  # end
 end

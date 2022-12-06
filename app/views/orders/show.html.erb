@@ -3,30 +3,50 @@
     <% case @order.status %>
     <% when 'waiting_for_payment' %>
       <p id="status-info" data-payment="true">
-        Your order has been placed! Please complete the payment.
+        <%= I18n.t('order.waiting_for_payment') %>
       </p>
       <%= render partial: 'partials/loader' %>
     <% when 'waiting_for_approval' %>
       <p id="status-info">
-        Please wait for the restaurant to accept your order.
+        <%= I18n.t('order.waiting_for_approval') %>
       </p>
       <%= render partial: 'partials/loader' %>
     <% when 'rejected' %>
       <p>
-        Payment for the order has been rejected. Reason:
-        <%= @order.rejection_reason %>
+        <%= I18n.t('order.rejected', reason: @order.rejection_reason) %>
       </p>
     <% when 'in_delivery' %>
       <p>
-        Your food is on the way!
+        <%= I18n.t('order.in_delivery') %>
+      </p>
+      <hr>
+      <h4>Your order:</h4>
+      <p>
+        <%= @order.formatted_html_product_names %>
       </p>
     <% when 'done' %>
       <p>
-        Your order has arrived. Bon Appétit!
+        <%= I18n.t('order.done') %>
+      </p>
+      <hr>
+      <h4>Your order:</h4>
+      <p>
+        <%= @order.formatted_html_product_names %>
+      </p>
+    <% when 'in_preparation' %>
+      <h2>
+        Thank you for placing an order.
+        Your food is being prepared.
+      </h2>
+      <h4>Estimated delivery time: <%= @order.estimated_delivery_date.strftime('%H:%M') %></h4>
+      <hr>
+      <h4>Your order:</h4>
+      <p>
+        <%= @order.formatted_html_product_names %>
       </p>
     <% else %>
       <p>
-        Error: Unknown order status.
+        <%= I18n.t('order.unknown_status') %>
       </p>
     <% end %>
   </div>

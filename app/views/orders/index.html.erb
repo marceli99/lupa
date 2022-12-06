@@ -1,57 +1,45 @@
-<br>
-<div class="orders-table" data-controller="orders_table">
-  <% categories = %w[waiting_for_approval in_preparation in_delivery done] %>
-  <% categories.each do |category| %>
-    <div class="category">
-      <div class="header">
-        <h3><%= category.titleize.gsub('_', ' ') %></h3>
+<div data-controller="orders_table">
+  <br>
+  <div class="modal hidden" data-orders_table-target="modal">
+    <div class="confirmation-dialog">
+      <h1>Are you sure?</h1>
+      <p>Are you sure you want to move this order?</p>
+      <div id="delivery_time_input" class="delivery_time hidden">
+        <p style="margin: 0.2em">Set estimated delivery time:</p>
+        <select id="delivery_times" name="delivery_times">
+          <option value="0.5">30 minutes</option>
+          <option value="1">1 hour</option>
+          <option value="1.5">1.5 hour</option>
+          <option value="2">2 hours</option>
+          <option value="2.5">2.5 hours</option>
+          <option value="3">3 hours</option>
+          <option value="3.5">3.5 hours</option>
+          <option value="4">4 hours</option>
+          <option value="4.5">4.5 hours</option>
+          <option value="5">5 hours</option>
+        </select>
+        <p></p>
       </div>
-      <div id="dropzone_<%= category %>" class="orders dropzone" data-status="<%= category %>">
-        <% @orders.send(category).each do |order| %>
-          <%= render partial: 'partials/table_order', locals: { order: order } %>
-        <% end %>
+      <div class="buttons">
+        <button class="confirm" data-action="click->orders_table#confirmModal">Move order</button>
+        <button class="cancel" data-action="click->orders_table#cancelModal">Cancel</button>
       </div>
     </div>
-  <% end %>
+  </div>
+  <div class="orders-table">
+    <% categories = %w[waiting_for_approval in_preparation in_delivery done] %>
+    <% categories.each do |category| %>
+      <div class="category">
+        <div class="header">
+          <h3><%= category.titleize.gsub('_', ' ') %></h3>
+        </div>
+        <div id="dropzone_<%= category %>" class="orders dropzone" data-status="<%= category %>">
+          <% @orders.send(category).each do |order| %>
+            <%= render partial: 'partials/table_order', locals: { order: order } %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 
-  <!--  <div class="category">-->
-  <!--    <div class="header">-->
-  <!--      <h3>New</h3>-->
-  <!--    </div>-->
-  <!--    <div id="dropzone_waiting_for_approval" class="orders dropzone" data-status="waiting_for_approval">-->
-  <%# @orders.waiting_for_approval.each do |order| %>
-  <!--        <h2 id="<%#= order.id %>"><%#= order.formatted_product_names %></h2>-->
-  <%# end %>
-  <!--    </div>-->
-  <!--  </div>-->
-  <!--  <div class="category">-->
-  <!--    <div class="header">-->
-  <!--      <h3>In preparation</h3>-->
-  <!--    </div>-->
-  <!--    <div id="dropzone_in_preparation" class="orders dropzone" data-status="in_preparation">-->
-  <%# @orders.in_preparation.each do |order| %>
-  <!--        <h2 id="<%#= order.id %>"><%#= order.formatted_product_names %></h2>-->
-  <%# end %>
-  <!--    </div>-->
-  <!--  </div>-->
-  <!--  <div class="category">-->
-  <!--    <div class="header">-->
-  <!--      <h3>In delivery</h3>-->
-  <!--    </div>-->
-  <!--    <div id="dropzone_in_delivery" class="orders dropzone" data-status="in_delivery">-->
-  <%# @orders.in_delivery.each do |order| %>
-  <!--        <h2 id="<%#= order.id %>"><%#= order.formatted_product_names %></h2>-->
-  <%# end %>
-  <!--    </div>-->
-  <!--  </div>-->
-  <!--  <div class="category">-->
-  <!--    <div class="header">-->
-  <!--      <h3>Done</h3>-->
-  <!--    </div>-->
-  <!--    <div id="dropzone_done" class="orders dropzone" data-status="done">-->
-  <%# @orders.done.each do |order| %>
-  <!--        <h2 id="<%#= order.id %>"><%#= order.formatted_product_names %></h2>-->
-  <%# end %>
-  <!--    </div>-->
-  <!--  </div>-->
 </div>

@@ -33,14 +33,14 @@
               <hr>
             </div>
             <div class="radio">
-              <label for="delivery" class="label">
-                <%= I18n.t('delivery') %>
-                <input id="delivery" type="radio" checked="checked" name="delivery_method" value="delivery" data-action="click->frame#toggleDelivery">
-                <span class="checkmark"></span>
-              </label>
               <label for="self_pickup" class="label">
                 <%= I18n.t('self_pickup') %>
-                <input id="self_pickup" type="radio" name="delivery_method" value="self_pickup" data-action="click->frame#toggleDelivery">
+                <input id="self_pickup" type="radio" checked="checked" name="delivery_method" value="self_pickup" data-action="click->frame#toggleDelivery">
+                <span class="checkmark"></span>
+              </label>
+              <label for="delivery" class="label">
+                <%= I18n.t('delivery') %>
+                <input id="delivery" type="radio" name="delivery_method" value="delivery" data-action="click->frame#toggleDelivery">
                 <span class="checkmark"></span>
               </label>
             </div>
@@ -53,7 +53,15 @@
             </div>
             <div class="field">
               <select id="order_for_select" name="delivery_time" style="width: 100%">
-                <option value="asap"><%= I18n.t('as_soon_as_possible') %></option>
+                <% intervals = time_intervals(opening_hours.open_time, opening_hours.close_time) %>
+                <% if intervals.none? %>
+                  <option value="asap"><%= I18n.t('no_available_delivery_time') %></option>
+                <% else %>
+                  <option value="asap"><%= I18n.t('as_soon_as_possible') %></option>
+                  <% intervals.each do |interval| %>
+                    <option value="<%= interval %>"><%= interval %></option>
+                  <% end %> %>
+                <% end %>
               </select>
             </div>
           </div>
@@ -65,19 +73,19 @@
           </div>
           <div class="inline">
             <div class="field street">
-              <input id="delivery_street" class="input" type="text" name="delivery_street" data-action="keyup->frame#saveInput" required>
+              <input id="delivery_street" class="input" type="text" name="delivery_street" data-action="keyup->frame#saveInput">
               <label class="label" for="delivery_street"><%= I18n.t('delivery_street') %></label>
               <div class="underline"></div>
             </div>
 
             <div class="field number">
-              <input id="delivery_house" class="input" type="text" name="delivery_house_number" data-action="keyup->frame#saveInput" required>
+              <input id="delivery_house" class="input" type="text" name="delivery_house_number" data-action="keyup->frame#saveInput">
               <label class="label" for="delivery_house"><%= I18n.t('delivery_house_number') %></label>
               <div class="underline"></div>
             </div>
           </div>
           <div class="field">
-            <input id="delivery_city" class="input" type="text" name="delivery_city" data-action="keyup->frame#saveInput" required>
+            <input id="delivery_city" class="input" type="text" name="delivery_city" data-action="keyup->frame#saveInput">
             <label class="label" for="delivery_city"><%= I18n.t('delivery_city') %></label>
             <div class="underline"></div>
           </div>
@@ -105,20 +113,20 @@
         </div>
       </div>
     </div>
-  <div class="space-filler"></div>
-  <div class="cart-footer">
-    <div class="cart-price">
-      <span><%= I18n.t('total') %>:</span>
-      <span><%= format_price(@cart.total) %></span>
-    </div>
-    <div class="split-btn">
-      <div class="checkout-btn">
-        <%= link_to "<button class='btn' type='button'>Back to cart</button>".html_safe, cart_show_path, "data-turbo-method": :post %>
+    <div class="space-filler"></div>
+    <div class="cart-footer">
+      <div class="cart-price">
+        <span><%= I18n.t('total') %>:</span>
+        <span><%= format_price(@cart.total) %></span>
       </div>
-      <div class="checkout-btn">
-        <%= submit_tag 'Order', class: 'btn' %>
+      <div class="split-btn">
+        <div class="checkout-btn">
+          <%= link_to "<button class='btn' type='button'>Back to cart</button>".html_safe, cart_show_path, "data-turbo-method": :post %>
+        </div>
+        <div class="checkout-btn">
+          <%= submit_tag 'Order', class: 'btn' %>
+        </div>
       </div>
     </div>
-  </div>
   <% end %>
 <% end %>

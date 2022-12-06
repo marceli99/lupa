@@ -1,19 +1,22 @@
-Trestle.resource(:categories) do
+Trestle.resource(:open_hours) do
+  remove_action :new, :destroy
+
   menu do
-    item :categories, icon: "fa fa-list"
+    item :open_hours, icon: "fa fa-calendar"
   end
 
-  # Customize the table columns shown on the index view.
-  #
+  collection { OpenHour.order(id: :asc) }
+
   table do
-    column :name
-    column :created_at, align: :center
-    column :updated_at, align: :center
-    actions
+    column :verbose_day_of_week
+    column :parsed_open_time
+    column :parsed_close_time
   end
 
-  form do |category|
-    text_field :name, label: I18n.t('category.name')
+  form do |open_hour|
+    text_field :verbose_day_of_week, disabled: true
+    time_field :open_time
+    time_field :close_time
   end
 
   # By default, all parameters passed to the update and create actions will be
@@ -24,6 +27,6 @@ Trestle.resource(:categories) do
   #   http://guides.rubyonrails.org/action_controller_overview.html#strong-parameters
   #
   # params do |params|
-  #   params.require(:category).permit(:name, ...)
+  #   params.require(:open_hour).permit(:name, ...)
   # end
 end

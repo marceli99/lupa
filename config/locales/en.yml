@@ -13,6 +13,7 @@ en:
   total: 'Total'
   order_for: 'Order for'
   as_soon_as_possible: 'ASAP'
+  no_available_delivery_time: 'Closed'
   delivery_address: 'Delivery address'
   delivery_city: 'City'
   delivery_house_number: 'House'
@@ -21,4 +22,10 @@ en:
   blik: 'Blik'
   card: 'Card'
   cash: 'Cash'
-
+  order:
+    waiting_for_payment: 'Your order has been placed! Please complete the payment.'
+    waiting_for_approval: 'Please wait for the restaurant to accept your order.'
+    rejected: 'Payment for the order has been rejected. Reason: %{reason}'
+    in_delivery: 'Your food is on the way!'
+    done: 'Your order has arrived. Bon Appétit!'
+    unknown_status: 'Error: Unknown order status. Please refresh the page or contact restaurant if error persists.'

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users,
+             path: '',
+             path_names: { sign_in: 'admin' }
 
   mount ActionCable.server => '/cable'
 
@@ -11,6 +13,10 @@ Rails.application.routes.draw do
   post 'cart/decrease_count', to: 'cart#decrease_count'
 
   post 'orders/board', to: 'orders#render_board'
+
+  namespace :admin do
+
+  end
 
   post 'payment/:id/accept', to: 'payment#accept', as: :accept_payment
   post 'payment/:id/reject', to: 'payment#reject', as: :reject_payment

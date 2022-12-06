@@ -47,4 +47,12 @@ products.each do |product|
   product.image.attach(io: File.open(Rails.root.join('app/assets/images/vegan-pizza.jpg')), filename: 'vegan-pizza.jpg')
 end
 
+7.times do |day|
+  OpenHour.create!(
+    day_of_week: day + 1,
+    open_time: Time.parse('08:00:00'),
+    close_time: Time.parse('22:00:00'),
+  )
+end
+
 puts 'Seeded database!'

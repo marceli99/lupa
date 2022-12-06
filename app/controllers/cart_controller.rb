@@ -41,7 +41,7 @@ class CartController < ApplicationController
   def checkout
     respond_to do |format|
       format.turbo_stream do
-        render turbo_stream: turbo_stream.replace('cart', partial: 'cart/checkout', locals: { cart: @cart })
+        render turbo_stream:turbo_stream.replace('cart', partial: 'cart/checkout', locals: { cart: @cart, opening_hours: OpenHour.todays_open_hours })
       end
     end
   end
@@ -55,7 +55,7 @@ class CartController < ApplicationController
   def render_cart
     respond_to do |format|
       format.turbo_stream do
-        render turbo_stream: turbo_stream.replace('cart', partial: 'cart/cart', locals: { cart: @cart })
+        render turbo_stream: turbo_stream.replace('cart', partial: 'cart/cart', locals: { cart: @cart, opening_hours: OpenHour.todays_open_hours })
       end
     end
   end

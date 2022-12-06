@@ -10,6 +10,7 @@ module Lupa
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
+    config.time_zone = 'Warsaw'
 
     # Use mini magick as active storage processor
     config.active_storage.variant_processor = :mini_magick

@@ -2,6 +2,8 @@ class OrdersController < ApplicationController
   layout 'order_layout', only: [:index, :create, :show]
 
   def index
+    authenticate_user!
+
     @orders = Order.todays_orders
   end
 
@@ -21,9 +23,16 @@ class OrdersController < ApplicationController
   end
 
   def update
-    # authenticate_user!
+    authenticate_user!
 
-    Order.find(order_update_params[:id]).update!(status: order_update_params[:status])
+    if order_update_params[:estimated_delivery_date].present?
+      Order.find(order_update_params[:id]).update!(
+        status: order_update_params[:status],
+        estimated_delivery_date: DateTime.current + order_update_params[:estimated_delivery_date].to_f.hours
+      )
+    else
+      Order.find(order_update_params[:id]).update!(status: order_update_params[:status])
+    end
   end
 
   def status
@@ -31,7 +40,7 @@ class OrdersController < ApplicationController
   end
 
   def board_order
-    render :partial => 'partials/table_order', locals: { order: Order.find(params[:id])}
+    render :partial => 'partials/table_order', locals: { order: Order.find(params[:id]) }
   end
 
   private
@@ -45,7 +54,7 @@ class OrdersController < ApplicationController
   end
 
   def order_update_params
-    params.permit(:id, :status)
+    params.permit(:id, :status, :estimated_delivery_date)
   end
 
   def order_params
