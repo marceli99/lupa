@@ -16,6 +16,14 @@ $(document).ready(() => {
     let titles = $('#categories_list').children();
     let categories = $('#products .dish_category')
 
+    let buttons = $("form[action='/cart/add'] .btn");
+    buttons.on('click', () => {
+        if (!$('#aside_open').is(':checked')) {
+            $('#aside_open_label').click();
+        }
+    });
+
+
     const observer = new IntersectionObserver(entries => {
             entries.forEach((entry) => {
                 let index = categories.index(entry.target);
