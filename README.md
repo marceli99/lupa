@@ -1,25 +1,18 @@
-# README
+## Lupa
+Restaurant service app
+## How to start
+#### Technological stack required:
+- Ruby 3.1.2
+- Rails 7
+- Linux/macOS
+- Node > 10
+- Yarn > 1
+- Redis
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Installation
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# lupa
+- Clone project
+- Inside main directory `yarn install` and `bundler`
+- Now you can prepare database by typing `rails db:reset`. Make sure that you have proper config in `database.yaml` file! (database name and password)
+- Run redis server in background
+- Run app by `bin/dev`
