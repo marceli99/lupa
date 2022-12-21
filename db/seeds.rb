@@ -1,57 +1,54 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
-#
-
 User.create!(email: "admin@example.com", password: "password")
 
-main_dish = Category.create!(name: 'Main dishes')
-pizza = Category.create!(name: 'Pizza')
+main = Category.create!(name: 'Main dishes')
 soup = Category.create!(name: 'Soups')
-pasta = Category.create!(name: 'Pasta')
 drink = Category.create!(name: 'Drinks')
 
-products = [
-  Product.new(name: 'Margherita', description: 'Lorem ipsum', category: pizza, price: 12.99),
-  Product.new(name: 'Neapolitan', description: 'Lorem ipsum', category: pizza, price: 14.99),
-  Product.new(name: 'Pepperoni', description: 'Lorem ipsum', category: pizza, price: 13.99),
-  Product.new(name: 'Sicilian', description: 'Lorem ipsum', category: pizza, price: 16.99),
-  Product.new(name: 'Duo Formaggi', description: 'Lorem ipsum', category: pizza, price: 19.99),
-  Product.new(name: 'Quattro Formaggi', description: 'Lorem ipsum', category: pizza, price: 21.99),
-  Product.new(name: 'Salmon', description: 'Lorem ipsum', category: main_dish, price: 22.99),
-  Product.new(name: 'Vegan Meat Balls', description: 'Lorem ipsum', category: main_dish, price: 22.99),
-  Product.new(name: 'Breaded Cauliflower', description: 'Lorem ipsum', category: main_dish, price: 22.99),
-  Product.new(name: 'Bread-crumbed Pork chop', description: 'Lorem ipsum', category: main_dish, price: 24.99),
-  Product.new(name: 'Pad thai', description: 'Lorem ipsum', category: main_dish, price: 23.99),
-  Product.new(name: 'Chickpea omelette', description: 'Lorem ipsum', category: main_dish, price: 23.99),
-  Product.new(name: 'Borsch', description: 'Lorem ipsum', category: soup, price: 14.99),
-  Product.new(name: 'Cucumber soup', description: 'Lorem ipsum', category: soup, price: 13.99),
-  Product.new(name: 'Tomato soup', description: 'Lorem ipsum', category: soup, price: 13.99),
-  Product.new(name: 'Chicken alfredo', description: 'Lorem ipsum', category: pasta, price: 18.99),
-  Product.new(name: 'Pasta Alla Gricia', description: 'Lorem ipsum', category: pasta, price: 17.99),
-  Product.new(name: 'Sheet-Pan Burrata Caprese Gnocchi', description: 'Lorem ipsum', category: pasta, price: 18.99),
-  Product.new(name: 'Penne Alla Vodka', description: 'Lorem ipsum', category: pasta, price: 17.99),
-  Product.new(name: 'Baked Ziti', description: 'Lorem ipsum', category: pasta, price: 19.99),
-  Product.new(name: 'Puttanesca', description: 'Lorem ipsum', category: pasta, price: 18.99),
-  Product.new(name: 'Water (250ml)', description: 'Lorem ipsum', category: drink, price: 1.99),
-  Product.new(name: 'Coca Cola (250ml)', description: 'Lorem ipsum', category: drink, price: 3.99),
-  Product.new(name: 'Sprite', description: 'Lorem ipsum', category: drink, price: 3.99),
-]
+product = Product.new(name: 'Meat burger', description: 'A lot of meat', category: main, price: 9.99)
+product.image.attach(io: File.open(Rails.root.join('app/assets/images/hamburger.jpg')), filename: 'hamburger.jpg')
+product.save(validate: false)
 
-products.each do |product|
-  product.save(validate: false)
-  product.image.attach(io: File.open(Rails.root.join('app/assets/images/vegan-pizza.jpg')), filename: 'vegan-pizza.jpg')
-end
+product = Product.new(name: 'Double Meat burger', description: 'A lot of meat', category: main, price: 17.99)
+product.image.attach(io: File.open(Rails.root.join('app/assets/images/double_hamburger.jpg')), filename: 'double_hamburger.jpg')
+product.save(validate: false)
+
+product = Product.new(name: 'Margherita', description: 'Just a pizza', category: main, price: 9.99)
+product.image.attach(io: File.open(Rails.root.join('app/assets/images/pizza.jpg')), filename: 'pizza.jpg')
+product.save(validate: false)
+
+product = Product.new(name: 'Fries', description: 'Potato fries', category: main, price: 1.99)
+product.image.attach(io: File.open(Rails.root.join('app/assets/images/fries.jpg')), filename: 'fries.jpg')
+product.save(validate: false)
+
+product = Product.new(name: 'Tomato soup', description: 'Red tomato soup', category: soup, price: 2.99)
+product.image.attach(io: File.open(Rails.root.join('app/assets/images/tomato_soup.jpg')), filename: 'tomato_soup.jpg')
+product.save(validate: false)
+
+product = Product.new(name: 'Ramen', description: 'Ramen soup', category: soup, price: 4.99)
+product.image.attach(io: File.open(Rails.root.join('app/assets/images/ramen.jpg')), filename: 'ramen.jpg')
+product.save(validate: false)
+
+product = Product.new(name: 'Green soup', description: 'Green vegetable soup', category: soup, price: 1.99)
+product.image.attach(io: File.open(Rails.root.join('app/assets/images/green_soup.jpg')), filename: 'green_soup.jpg')
+product.save(validate: false)
+
+product = Product.new(name: 'Cola', description: 'Just a cola', category: drink, price: 0.99)
+product.image.attach(io: File.open(Rails.root.join('app/assets/images/cola.jpg')), filename: 'cola.jpg')
+product.save(validate: false)
+
+product = Product.new(name: 'Tea with ginger', description: 'Tea', category: drink, price: 1.99)
+product.image.attach(io: File.open(Rails.root.join('app/assets/images/tea.jpg')), filename: 'tea.jpg')
+product.save(validate: false)
+
+product = Product.new(name: 'Smoothie', description: 'Green smoothie', category: drink, price: 1.99)
+product.image.attach(io: File.open(Rails.root.join('app/assets/images/smoothie.jpg')), filename: 'smoothie.jpg')
+product.save(validate: false)
 
 7.times do |day|
   OpenHour.create!(
     day_of_week: day + 1,
-    open_time: Time.parse('08:00:00'),
-    close_time: Time.parse('22:00:00'),
+    open_time: Time.parse('07:00:00'),
+    close_time: Time.parse('23:00:00'),
   )
 end
 
