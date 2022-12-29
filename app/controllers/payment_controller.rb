@@ -1,5 +1,11 @@
 class PaymentController < ApplicationController
   def show
+    if order.payment_method == 'cash_payment'
+      order.update!(status: 'waiting_for_approval')
+
+      redirect_to root_path
+    end
+
     order
   end
 

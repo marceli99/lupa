@@ -23,6 +23,10 @@
       </div>
     <% end %>
   </div>
+  <footer>
+    <span>Robert Robertson, 1234 NW Bobcat Lane, St. Robert, MO 65584-5678</span>
+    <span>Opening hours today <%= OpenHour.todays_open_hours.open_time.strftime("%T") %> - <%= OpenHour.todays_open_hours.close_time.strftime("%T") %></span>
+  </footer>
 </main>
 <input type="checkbox" class="hidden aside_open" id="aside_open">
 <label id="aside_open_label" for="aside_open" class="aside_open_label">
