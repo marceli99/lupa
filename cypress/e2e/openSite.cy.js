@@ -1,8 +1,7 @@
 /// <reference types="cypress" />
 
-describe("E2E - Akcja wpisywania", () => {
-    it("Wpisywanie wartości w pole", () => {
-        cy.visit("/");
-        
+describe("E2E", () => {
+    it("Visit main page", () => {
+        cy.visit("http://localhost:3000");
     })
 })
